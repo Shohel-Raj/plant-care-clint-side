@@ -1,11 +1,14 @@
 import React from 'react';
+import Login from '../Component/LoginSignIn/Login';
+import SignIn from '../Component/LoginSignIn/SignIn';
 
 const Home = () => {
     
     return (
-        <div>
-            I'm Home
-        </div>
+        <>
+            <Login></Login>
+            <SignIn></SignIn>
+        </>
     );
 };
 
