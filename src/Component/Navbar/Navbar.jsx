@@ -50,11 +50,13 @@ const Navbar = () => {
                 <div className="navbar-end">
                     <div className="avatar w-8 mr-5 cursor-pointer my-anchor-element">
                         <div className="ring-primary ring-offset-base-100 w-24 rounded-full ring-2 ring-offset-2">
-                            <img src="https://img.daisyui.com/images/profile/demo/spiderperson@192.webp" />
+                            <img src={`${user?`${user.photoURL}`:'https://img.daisyui.com/images/profile/demo/spiderperson@192.webp'}`} />
                         </div>
                     </div>
                     <Tooltip anchorSelect=".my-anchor-element" place="top">
-                        helo
+                        {
+                            user?`${user.displayName}`:'user not Found'
+                        }
                     </Tooltip>
 
                     <div className="dropdown">

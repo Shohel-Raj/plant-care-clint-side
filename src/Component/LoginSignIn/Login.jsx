@@ -14,7 +14,7 @@ const Login = () => {
                 
                 const user = result.user;
                 setUser(user)
-                toast('Loging successfully')
+                toast.success('Loging successfully')
                 navigate(location?.state || '/')
               }).catch((error) => {
                 // Handle Errors here.
@@ -32,7 +32,7 @@ const Login = () => {
     
             signInUser(email,password).then(result=>{
                 setUser(result.user)
-                toast('login successfully')
+                toast.success('login successfully')
                 navigate(location?.state || '/')
             }).catch((error) => {
                 // Handle Errors here.
