@@ -10,8 +10,8 @@ const Navbar = () => {
     const links = <>
         <li><NavLink to='/' className={({ isActive }) => isActive ? 'font-bold border-b-2 uppercase' : 'uppercase'}>Home</NavLink> </li>
         <li><NavLink to='/AllPlant' className={({ isActive }) => isActive ? 'font-bold border-b-2 uppercase' : 'uppercase'}>All Plants</NavLink> </li>
-        <li><NavLink to='/addPlant' className={({ isActive }) => isActive ? 'font-bold border-b-2 uppercase' : 'uppercase'}>Add Plant</NavLink> </li>
         <li><NavLink to='/myPlant' className={({ isActive }) => isActive ? 'font-bold border-b-2 uppercase' : 'uppercase'}>My Plants</NavLink> </li>
+        <li><NavLink to='/addPlant' className={({ isActive }) => isActive ? 'font-bold border-b-2 uppercase' : 'uppercase'}>Add Plant</NavLink> </li>
     </>
 
     const { user, signOutUser } = use(AuthContext)
@@ -53,7 +53,7 @@ const Navbar = () => {
                             <img src={`${user?`${user.photoURL}`:'https://img.daisyui.com/images/profile/demo/spiderperson@192.webp'}`} />
                         </div>
                     </div>
-                    <Tooltip anchorSelect=".my-anchor-element" place="top">
+                    <Tooltip anchorSelect=".my-anchor-element" place="left" >
                         {
                             user?`${user.displayName}`:'user not Found'
                         }

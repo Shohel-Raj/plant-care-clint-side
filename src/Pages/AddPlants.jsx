@@ -1,17 +1,38 @@
 import React, { use } from 'react';
 import { AuthContext } from '../Contexts/AuthContext';
+import { toast } from 'react-toastify';
 
 const AddPlants = () => {
 
 
-    const {user}=use(AuthContext);
-    console.log(user);
+    const { user } = use(AuthContext);
+
     const handleSubmit = (e) => {
         e.preventDefault();
         const formData = new FormData(e.target);
-        const data = Object.fromEntries(formData.entries());
-        console.log(data);
+        const AddPlant = Object.fromEntries(formData.entries());
+        console.log(AddPlant);
+
         // You can handle submission logic here (e.g., send to backend)
+
+        fetch('http://localhost:3000/addPlant', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(AddPlant)
+        }).then(res => res.json()).then(data => {
+            console.log('submited', data);
+            if(data.insertedId)(
+                toast.success('Plant added Successfully')
+            )
+            e.target.reset()
+        })
+
+
+
+
+
     };
 
 
@@ -28,7 +49,7 @@ const AddPlants = () => {
                     <div>
                         <label className="block font-medium mb-1">Plant Name</label>
                         <input
-                        required
+                            required
                             type="text"
                             name="plantName"
                             className="w-full border rounded p-2"
@@ -36,7 +57,7 @@ const AddPlants = () => {
                         />
                     </div>
 
-                    
+
 
 
 
@@ -54,7 +75,7 @@ const AddPlants = () => {
                         </select>
                     </div>
 
-                    
+
 
                     <div>
                         <label className="block font-medium mb-1">Care Level</label>
@@ -100,7 +121,7 @@ const AddPlants = () => {
                             className="w-full border rounded p-2"
                         />
                     </div>
-                    
+
 
                     <div>
                         <label className="block font-medium mb-1">Health Status</label>
@@ -116,6 +137,7 @@ const AddPlants = () => {
                     <div>
                         <label className="block font-medium mb-1">User Email</label>
                         <input
+                            readOnly
                             type="email"
                             name="userEmail"
                             value={user?.email}
@@ -126,11 +148,12 @@ const AddPlants = () => {
                     <div>
                         <label className="block font-medium mb-1">User Name</label>
                         <input
+                            readOnly
                             type="text"
                             name="userName"
                             value={user?.displayName}
                             className="w-full border rounded p-2"
-                            
+
                         />
                     </div>
                     <div className='lg:col-span-3  md:col-span-2'>
