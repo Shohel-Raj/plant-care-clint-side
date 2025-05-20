@@ -2,6 +2,7 @@ import React, { use, useEffect, useState } from 'react';
 import { AuthContext } from '../Contexts/AuthContext';
 import Loader from '../Component/Loader/LOader';
 import Swal from 'sweetalert2';
+import EmptyMyPlant from '../Component/EmptyMyPlant';
 
 
 
@@ -42,11 +43,11 @@ const MyPlants = () => {
                         console.log(data);
 
                         if (data.deletedCount) {
-                            const remainigData =dataa.filter(d=>d._id  !== id);
+                            const remainigData = dataa.filter(d => d._id !== id);
                             setData(remainigData)
                             Swal.fire({
                                 title: "Deleted!",
-                                text: "Your file has been deleted.",
+                                text: "Your Plant has been deleted.",
                                 icon: "success"
                             });
                         }
@@ -61,64 +62,79 @@ const MyPlants = () => {
 
 
 
-
     return (
         <>
-            <div className="overflow-x-auto">
-                <table className="table ">
-                    {/* head */}
-                    <thead>
-                        <tr>
+            <div className="w-11/12 md:w-10/12 mx-auto">
 
-                            <th>Sl</th>
-                            <th>Name</th>
-                            <th>Watering Frequency/Care Level </th>
-                            <th>Health Status</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody >
-                        {/* row 1 */}
-                        {
-                            dataa.map((singledata, index) =>
-                                <tr key={singledata._id}>
-                                    <th>
-                                        <p>{index + 1}</p>
-                                    </th>
-                                    <td>
-                                        <div className="flex items-center gap-3">
-                                            <div className="avatar">
-                                                <div className="mask mask-squircle h-12 w-12">
-                                                    <img
-                                                        src={singledata.image}
-                                                        alt="Avatar Tailwind CSS Component" />
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <div className="font-bold">{singledata.plantName}</div>
-                                                <div className="text-sm opacity-50">{singledata.category}</div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        {singledata.wateringFrequency}
-                                        <br />
-                                        <span className="badge badge-ghost badge-sm">{singledata.careLevel}</span>
-                                    </td>
-                                    <td>{singledata.healthStatus}</td>
-                                    <th>
-                                        <button className="btn btn-ghost btn-xs">Details</button>
-                                        <button onClick={() => handleDelet(singledata._id)} className="btn btn-ghost btn-xs">Delete</button>
-                                    </th>
-                                </tr>
-                            )
-                        }
+                <div>
+                    {
+                        dataa.length ? <div>
+                            <div className='my-4'>
+                                <h1 className='font-bold text-2xl'>Your Plant Parade</h1>
+                                <p className='md:w-2/5 italic mt-3'>All the leafy legends you’ve adopted gather here—check in to water, feed, and cheer on every new sprout in your personal jungle!</p>
+                            </div>
+                            <table className="table ">
+                                {/* head */}
+                                <thead>
+                                    <tr>
+
+                                        <th>Sl</th>
+                                        <th>Name</th>
+                                        <th className='hidden md:flex'>Watering Frequency/Care Level </th>
+                                        <th>Health Status</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody >
+                                    {/* row 1 */}
+                                    {
+                                        dataa.map((singledata, index) =>
+                                            <tr key={singledata._id}>
+                                                <th>
+                                                    <p>{index + 1}</p>
+                                                </th>
+                                                <td>
+                                                    <div className="flex items-center gap-3">
+                                                        <div className="avatar">
+                                                            <div className="mask mask-squircle h-12 w-12">
+                                                                <img
+                                                                    src={singledata.image}
+                                                                    alt="Avatar Tailwind CSS Component" />
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <div className="font-bold">{singledata.plantName}</div>
+                                                            <div className="text-sm opacity-50">{singledata.category}</div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td className='hidden md:flex'>
+                                                    {singledata.wateringFrequency}
+                                                    <br />
+                                                    <span className="badge badge-ghost badge-sm">{singledata.careLevel}</span>
+                                                </td>
+                                                <td>{singledata.healthStatus}</td>
+                                                <th>
+                                                    <button className="btn btn-ghost btn-xs">Details</button>
+                                                    <button onClick={() => handleDelet(singledata._id)} className="btn btn-ghost btn-xs">Delete</button>
+                                                </th>
+                                            </tr>
+                                        )
+                                    }
 
 
 
-                    </tbody>
+                                </tbody>
 
-                </table>
+                            </table>
+                        </div> : <div>
+                            <EmptyMyPlant></EmptyMyPlant>
+                            
+                        </div>
+                    }
+                </div>
+
+
             </div>
 
 

@@ -6,14 +6,12 @@ import { ToastContainer } from 'react-toastify';
 const RootLayout = () => {
     return (
         <div className='dark:bg-black dark:text-white'>
-            <div className='shadow sticky to-0% flex '>
+            <div className='shadow sticky top-0 z-30'>
                 <Navbar></Navbar>
                 {/* <labez */}
             </div>
-            <div className='w-11/12 md:w-10/12 mx-auto'>
-
-                <Outlet></Outlet>
-            </div>
+            <Outlet></Outlet>
+            
             <ToastContainer />
 
 

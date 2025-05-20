@@ -18,7 +18,7 @@ import Slider3 from './Slider3';
 const Slider = () => {
   return (
     <>
-      <div className='mt-3' >
+      <div className='mt-3 w-11/12 md:w-10/12 mx-auto' >
         <Swiper
         grabCursor={true}
         effect={'creative'}
