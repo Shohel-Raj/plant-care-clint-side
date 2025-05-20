@@ -12,11 +12,11 @@ const CommonCare = () => {
                 </div>
 
 
-                <div className="grid grid-rows-1 md:grid-cols-3 shadow-xl rounded-2xl py-5 px-3 gap-6 ">
-                    <div className="bg-[url('../mistake.jpeg')] min-h-56 bg-center  bg-cover rounded-2xl">
+                <div className="grid grid-rows-1 md:grid-cols-5 shadow-xl rounded-2xl py-5 px-3 gap-6 ">
+                    <div className="bg-[url('../mistake.jpeg')] md:col-span-2 min-h-56 bg-center  bg-cover rounded-2xl">
 
                     </div>
-                    <div className='md:col-span-2'>
+                    <div className='md:col-span-3'>
                         <h1 className='font-bold text-2xl mb-4'>🌱 Top Plant Care Mistakes :</h1>
                         <ul class="list-none space-y-2 italic grid md:grid-cols-2 text-gray-700">
                             <li class="flex items-start gap-2">

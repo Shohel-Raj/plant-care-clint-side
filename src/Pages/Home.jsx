@@ -2,6 +2,7 @@ import React from 'react';
 import Slider from '../Component/Slider/Slider';
 import NewPlantCard from '../Component/NewPlant/NewPlantCard';
 import CommonCare from '../Component/CommonMistake/CommonCare';
+import BeginnerFriendly from '../Component/Friendly/BeginnerFriendly';
 
 
 const Home = () => {
@@ -27,6 +28,9 @@ const Home = () => {
             </div>
             <div className='my-7'>
                 <CommonCare></CommonCare>
+            </div>
+            <div className='bg-base-200 py-1.5'>
+                    <BeginnerFriendly></BeginnerFriendly>
             </div>
 
 
