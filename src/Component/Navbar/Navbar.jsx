@@ -38,7 +38,7 @@ const Navbar = () => {
             <div className="navbar bg-base-100 w-11/12 md:w-10/12 mx-auto pl-0" >
                 <div className="navbar-start">
 
-                    <a className="btn btn-ghost text-xl  p-0">daisyUI</a>
+                    <h1 className="btn btn-ghost text-xl uppercase p-0">Plant Care</h1>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">

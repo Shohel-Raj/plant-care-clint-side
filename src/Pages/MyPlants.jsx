@@ -64,7 +64,7 @@ const MyPlants = () => {
 
     return (
         <>
-            <div className="w-11/12 md:w-10/12 mx-auto">
+            <div className="w-11/12 min-h-[calc(100vh-150px)] md:w-10/12 mx-auto">
 
                 <div>
                     {
