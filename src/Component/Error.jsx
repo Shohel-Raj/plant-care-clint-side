@@ -1,12 +1,9 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import { Link } from 'react-router';
 
 const Error = () => {
 
-    useEffect(() => {
-        document.title = `Error | The Cox's`
-    }, [])
 
     return (
         <>
@@ -21,7 +18,7 @@ const Error = () => {
                     </svg>
                     <p className="text-2xl font-semibold md:text-3xl">Sorry, we couldn't find this page.</p>
                     <p className="mt-4 mb-8 ">But dont worry, you can find plenty of other things on our homepage.</p>
-                    <Link to='/' className="px-8 py-3 font-semibold rounded btn btn-neutral mt-4 uppercase text-white">Back to homepage</Link>
+                    <Link to='/' className="px-8 py-3 font-semibold rounded btn btn-primary mt-4 uppercase text-white">Back to homepage</Link>
                 </div>
             </section>
         </>
