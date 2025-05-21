@@ -6,10 +6,14 @@ const AllPlants = () => {
     const data = useLoaderData()
 
     const [dataa, setData] = useState(data);
+    const [filter, setFilter] = useState('')
     const navigate = useNavigate();
 
 
-
+    const handleFilter = e => {
+        const type = e.target.value;
+        setFilter(type)
+    }
 
 
 
@@ -20,7 +24,22 @@ const AllPlants = () => {
 
     useEffect(() => {
         document.title = `Plant Care | All Plant`
-    }, [])
+
+        let url = ``
+
+        if (filter === 'Easy to Diffecult') {
+            url = 'http://localhost:3000/allPlant'
+
+        } else (
+            url = 'http://localhost:3000/allPlant?order=desc'
+        )
+
+        fetch(url).then(res => res.json()).then(data => {
+            setData(data);
+        })
+
+
+    }, [filter])
 
     return (
         <>
@@ -33,7 +52,22 @@ const AllPlants = () => {
                                 <h1 className='font-bold text-2xl'>Your Plant Parade</h1>
                                 <p className='md:w-2/5 italic mt-3'>All the leafy legends you’ve adopted gather here—check in to water, feed, and cheer on every new sprout in your personal jungle!</p>
                             </div>
-                            <table className="table ">
+
+                            <div className='flex gap-4 items-center mb-3.5'>
+                                <p className='font-bold uppercase italic'>filtered by care level</p>
+                                <select onChange={handleFilter} value={filter} className="select w-40">
+                                    <option disabled={true}>Select what you went</option>
+                                    <option>Diffecult to Easy</option>
+                                    <option>Easy to Diffecult</option>
+                                    
+
+                                </select>
+                            </div>
+
+
+
+
+                            <table className="table mb-7">
                                 {/* head */}
                                 <thead>
                                     <tr>
@@ -75,7 +109,7 @@ const AllPlants = () => {
                                                 </td>
                                                 <td>{singledata.healthStatus}</td>
                                                 <th>
-                                                    <button onClick={() => handleViewDetaills(singledata._id)} className="uppercase btn btn-ghost btn-xs">Details</button>
+                                                    <button onClick={() => handleViewDetaills(singledata._id)} className="uppercase btn  btn-xs">Details</button>
 
                                                 </th>
                                             </tr>

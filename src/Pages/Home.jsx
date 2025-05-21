@@ -3,12 +3,16 @@ import Slider from '../Component/Slider/Slider';
 import NewPlantCard from '../Component/NewPlant/NewPlantCard';
 import CommonCare from '../Component/CommonMistake/CommonCare';
 import BeginnerFriendly from '../Component/Friendly/BeginnerFriendly';
+import { useLoaderData } from 'react-router';
 
 
 const Home = () => {
      useEffect(()=>{
         document.title=`Plant Care | Home`
     },[])
+
+    const plantData=useLoaderData();
+
 
     return (
         <>
@@ -22,9 +26,9 @@ const Home = () => {
                 </div>
                 <div className='my-7 w-11/12 md:w-10/12 mx-auto grid grid-cols-1 md:grid-cols-3 gap-3'>
 
-                    <NewPlantCard></NewPlantCard>
-                    <NewPlantCard></NewPlantCard>
-                    <NewPlantCard></NewPlantCard>
+                    {
+                        plantData.map(singlePlant=> <NewPlantCard key={singlePlant._id} singlePlant={singlePlant}></NewPlantCard>)
+                    }
                 </div>
 
 

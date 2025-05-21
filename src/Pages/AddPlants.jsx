@@ -14,7 +14,7 @@ const AddPlants = () => {
         e.preventDefault();
         const formData = new FormData(e.target);
         const AddPlant = Object.fromEntries(formData.entries());
-        console.log(AddPlant);
+
 
         // You can handle submission logic here (e.g., send to backend)
 
@@ -25,7 +25,7 @@ const AddPlants = () => {
             },
             body: JSON.stringify(AddPlant)
         }).then(res => res.json()).then(data => {
-            console.log('submited', data);
+
             if (data.insertedId) (
                 toast.success('Plant added Successfully')
             )

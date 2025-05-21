@@ -126,10 +126,10 @@ const MyPlants = () => {
                                                     <span className="badge badge-ghost badge-sm">{singledata.careLevel}</span>
                                                 </td>
                                                 <td>{singledata.healthStatus}</td>
-                                                <th>
-                                                    <button onClick={() => handleViewDetaills(singledata._id)} className="uppercase btn btn-ghost btn-xs">Details</button>
-                                                    <button onClick={() => handleUpdate(singledata._id)} className="uppercase btn btn-ghost btn-xs">Update</button>
-                                                    <button onClick={() => handleDelet(singledata._id)} className="uppercase btn btn-ghost btn-xs">Delete</button>
+                                                <th >
+                                                    <button onClick={() => handleViewDetaills(singledata._id)} className="uppercase btn  mb-1 md:mb-0 btn-xs md:mr-1">Details</button>
+                                                    <button onClick={() => handleUpdate(singledata._id)} className="uppercase btn md:mr-1 mb-1 md:mb-0 btn-xs">Update</button>
+                                                    <button onClick={() => handleDelet(singledata._id)} className="uppercase btn btn-xs">Delete</button>
                                                 </th>
                                             </tr>
                                         )
