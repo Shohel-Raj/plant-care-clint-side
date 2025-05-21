@@ -18,45 +18,45 @@ const CommonCare = () => {
                     </div>
                     <div className='md:col-span-3'>
                         <h1 className='font-bold text-2xl mb-4'>🌱 Top Plant Care Mistakes :</h1>
-                        <ul class="list-none space-y-2 italic grid md:grid-cols-2 text-gray-700">
-                            <li class="flex items-start gap-2">
-                                <span class="text-red-500">❌</span>
+                        <ul className="list-none space-y-2 italic grid md:grid-cols-2 text-gray-700">
+                            <li className="flex items-start gap-2">
+                                <span className="text-red-500">❌</span>
                                 Overwatering – causes root rot and suffocation.
                             </li>
-                            <li class="flex items-start gap-2">
-                                <span class="text-red-500">❌</span>
+                            <li className="flex items-start gap-2">
+                                <span className="text-red-500">❌</span>
                                 Underwatering – leads to wilting and dry leaves.
                             </li>
-                            <li class="flex items-start gap-2">
-                                <span class="text-red-500">❌</span>
+                            <li className="flex items-start gap-2">
+                                <span className="text-red-500">❌</span>
                                 Wrong lighting – too much or too little stunts growth.
                             </li>
-                            <li class="flex items-start gap-2">
-                                <span class="text-red-500">❌</span>
+                            <li className="flex items-start gap-2">
+                                <span className="text-red-500">❌</span>
                                 No drainage – water gets trapped, causing rot.
                             </li>
-                            <li class="flex items-start gap-2">
-                                <span class="text-red-500">❌</span>
+                            <li className="flex items-start gap-2">
+                                <span className="text-red-500">❌</span>
                                 Wrong soil – lacks nutrients or drains poorly.
                             </li>
-                            <li class="flex items-start gap-2">
-                                <span class="text-red-500">❌</span>
+                            <li className="flex items-start gap-2">
+                                <span className="text-red-500">❌</span>
                                 Low humidity – browns tips on tropical plants.
                             </li>
-                            <li class="flex items-start gap-2">
-                                <span class="text-red-500">❌</span>
+                            <li className="flex items-start gap-2">
+                                <span className="text-red-500">❌</span>
                                 Skipping repotting – leads to root-bound stress.
                             </li>
-                            <li class="flex items-start gap-2">
-                                <span class="text-red-500">❌</span>
+                            <li className="flex items-start gap-2">
+                                <span className="text-red-500">❌</span>
                                 Ignoring pests – can spread fast and kill the plant.
                             </li>
-                            <li class="flex items-start gap-2">
-                                <span class="text-red-500">❌</span>
+                            <li className="flex items-start gap-2">
+                                <span className="text-red-500">❌</span>
                                 Over/under fertilizing – burns roots or slows growth.
                             </li>
-                            <li class="flex items-start gap-2">
-                                <span class="text-red-500">❌</span>
+                            <li className="flex items-start gap-2">
+                                <span className="text-red-500">❌</span>
                                 Not researching your plant’s specific needs.
                             </li>
                         </ul>

@@ -15,45 +15,45 @@ const BeginnerFriendly = () => {
                         <div className='md:col-span-3'>
                             <h1 className='font-bold text-2xl mb-4'>🌿 Beginner-Friendly Plants:</h1>
 
-                            <ul class="list-none space-y-2 italic grid md:grid-cols-2 text-gray-700">
-                                <li class="flex items-start gap-2">
-                                    <span class="text-green-500">✅</span>
+                            <ul className="list-none space-y-2 italic grid md:grid-cols-2 text-gray-700">
+                                <li className="flex items-start gap-2">
+                                    <span className="text-green-500">✅</span>
                                     Snake Plant – thrives in low light and needs little water.
                                 </li>
-                                <li class="flex items-start gap-2">
-                                    <span class="text-green-500">✅</span>
+                                <li className="flex items-start gap-2">
+                                    <span className="text-green-500">✅</span>
                                     Pothos – fast-growing, forgiving, and perfect for hanging baskets.
                                 </li>
-                                <li class="flex items-start gap-2">
-                                    <span class="text-green-500">✅</span>
+                                <li className="flex items-start gap-2">
+                                    <span className="text-green-500">✅</span>
                                     ZZ Plant – tolerates low light and infrequent watering.
                                 </li>
-                                <li class="flex items-start gap-2">
-                                    <span class="text-green-500">✅</span>
+                                <li className="flex items-start gap-2">
+                                    <span className="text-green-500">✅</span>
                                     Spider Plant – easy to grow and great for air purification.
                                 </li>
-                                <li class="flex items-start gap-2">
-                                    <span class="text-green-500">✅</span>
+                                <li className="flex items-start gap-2">
+                                    <span className="text-green-500">✅</span>
                                     Peace Lily – thrives in shade and shows when it needs water.
                                 </li>
-                                <li class="flex items-start gap-2">
-                                    <span class="text-green-500">✅</span>
+                                <li className="flex items-start gap-2">
+                                    <span className="text-green-500">✅</span>
                                     Aloe Vera – loves bright light and doesn’t need frequent watering.
                                 </li>
-                                <li class="flex items-start gap-2">
-                                    <span class="text-green-500">✅</span>
+                                <li className="flex items-start gap-2">
+                                    <span className="text-green-500">✅</span>
                                     Chinese Evergreen – adaptable and low-maintenance with colorful leaves.
                                 </li>
-                                <li class="flex items-start gap-2">
-                                    <span class="text-green-500">✅</span>
+                                <li className="flex items-start gap-2">
+                                    <span className="text-green-500">✅</span>
                                     Cast Iron Plant – handles low light and neglect well.
                                 </li>
-                                <li class="flex items-start gap-2">
-                                    <span class="text-green-500">✅</span>
+                                <li className="flex items-start gap-2">
+                                    <span className="text-green-500">✅</span>
                                     Jade Plant – a hardy succulent that requires minimal care.
                                 </li>
-                                <li class="flex items-start gap-2">
-                                    <span class="text-green-500">✅</span>
+                                <li className="flex items-start gap-2">
+                                    <span className="text-green-500">✅</span>
                                     Dracaena – a stylish, slow-growing plant that thrives indoors.
                                 </li>
                             </ul>

@@ -2,4 +2,7 @@
 @plugin "daisyui";
  @plugin "daisyui" {
    themes: light --default, dark --prefersdark;
- }v
+ }
+ @plugin "daisyui" {
+  themes: light --default, dark --prefersdark;
+}

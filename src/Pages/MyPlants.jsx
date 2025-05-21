@@ -3,6 +3,7 @@ import { AuthContext } from '../Contexts/AuthContext';
 import Loader from '../Component/Loader/LOader';
 import Swal from 'sweetalert2';
 import EmptyMyPlant from '../Component/EmptyMyPlant';
+import { useNavigate } from 'react-router';
 
 
 
@@ -10,8 +11,13 @@ const MyPlants = () => {
 
     const { user, loading, } = use(AuthContext);
     const [dataa, setData] = useState([]);
+    const navigate=useNavigate();
 
     useEffect(() => {
+
+
+        document.title=`Plant Care | My Plant`
+        
         fetch(`http://localhost:3000/plant?emailParams=${user.email}`).then(res => res.json()).then(data => {
             setData(data);
         })
@@ -58,7 +64,10 @@ const MyPlants = () => {
 
     }
 
-
+const handleViewDetaills=(id)=>{
+    
+    navigate(`/viewdetails/${id}`)
+}
 
 
 
@@ -115,7 +124,7 @@ const MyPlants = () => {
                                                 </td>
                                                 <td>{singledata.healthStatus}</td>
                                                 <th>
-                                                    <button className="btn btn-ghost btn-xs">Details</button>
+                                                    <button onClick={() => handleViewDetaills(singledata._id)} className="btn btn-ghost btn-xs">Details</button>
                                                     <button onClick={() => handleDelet(singledata._id)} className="btn btn-ghost btn-xs">Delete</button>
                                                 </th>
                                             </tr>

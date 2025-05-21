@@ -1,4 +1,4 @@
-import React, { use } from 'react';
+import React, { use, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router';
 import { toast } from 'react-toastify';
 import { AuthContext } from '../../Contexts/AuthContext';
@@ -8,6 +8,9 @@ const SignIn = () => {
     const { createUser, setUser, updateUserProfile, googleSignin } = use(AuthContext);
     const location = useLocation();
     const navigate = useNavigate()
+    useEffect(()=>{
+                document.title=`Plant Care | Sign In`
+            },[])
 
 
     const handleGoogle = () => {

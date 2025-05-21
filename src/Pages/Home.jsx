@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Slider from '../Component/Slider/Slider';
 import NewPlantCard from '../Component/NewPlant/NewPlantCard';
 import CommonCare from '../Component/CommonMistake/CommonCare';
@@ -6,6 +6,9 @@ import BeginnerFriendly from '../Component/Friendly/BeginnerFriendly';
 
 
 const Home = () => {
+     useEffect(()=>{
+        document.title=`Plant Care | Home`
+    },[])
 
     return (
         <>

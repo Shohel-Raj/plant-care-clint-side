@@ -9,6 +9,8 @@ import AddPlants from "../Pages/AddPlants";
 import MyPlants from "../Pages/MyPlants";
 import AllPlants from "../Pages/AllPlants";
 import PrivateRoute from "../Component/PrivateRouter/PrivateRouter";
+import ViewDetails from "../Pages/ViewDetails";
+import Loader from "../Component/Loader/LOader";
 
 const router = createBrowserRouter([
     {
@@ -23,6 +25,14 @@ const router = createBrowserRouter([
         {
             path:"/AllPlant",
             Component:AllPlants
+        },
+        {
+            path:"/viewdetails/:id",
+            element:<PrivateRoute>
+              <ViewDetails></ViewDetails>
+            </PrivateRoute>,
+            loader:({params})=>fetch(`http://localhost:3000/plant/${params.id}`),
+            hydrateFallbackElement:<Loader></Loader>
         },
         {
             path:"/loginSignInPage",

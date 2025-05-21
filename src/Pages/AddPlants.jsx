@@ -1,9 +1,12 @@
-import React, { use } from 'react';
+import React, { use, useEffect } from 'react';
 import { AuthContext } from '../Contexts/AuthContext';
 import { toast } from 'react-toastify';
 
 const AddPlants = () => {
 
+    useEffect(()=>{
+            document.title=`Plant Care | Add Plant`
+        },[])
 
     const { user } = use(AuthContext);
 
