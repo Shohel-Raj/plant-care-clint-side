@@ -18,7 +18,7 @@ import Slider3 from './Slider3';
 const Slider = () => {
   return (
     <>
-      <div className='mt-3 w-11/12 md:w-10/12 mx-auto' >
+      <div className='mt-3 w-11/12 rounded-3xl md:w-10/12 mx-auto' >
         <Swiper
         grabCursor={true}
         effect={'creative'}
@@ -43,7 +43,7 @@ const Slider = () => {
           }}
           // navigation={true}
           // modules={[Autoplay, Pagination, Navigation]}
-          className="mySwiper"
+          className="mySwiper rounded-3xl"
         >
           <SwiperSlide>
             <Slider1></Slider1>

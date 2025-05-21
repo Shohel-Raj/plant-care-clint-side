@@ -16,7 +16,7 @@ const Home = () => {
 
     return (
         <>
-            <div className='my-7'>
+            <div className='my-7 rounded-3xl'>
                 <Slider></Slider>
             </div>
             <div className='bg-base-200 py-1.5'>

@@ -16,7 +16,7 @@ const NewPlantCard = ({ singlePlant }) => {
 
     return (
         <>
-            <div className="card lg:card-side bg-base-100 shadow-sm">
+            <div className="card lg:card-side bg-base-100 dark:bg-white shadow-sm">
                 <figure>
                     <img
                         src={image}

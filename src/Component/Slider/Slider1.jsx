@@ -9,7 +9,7 @@ const Slider1 = () => {
                     backgroundImage: `url(${img})`,
                 }}
             >
-                <div className="hero-overlay"></div>
+                <div className="hero-overlay "></div>
                 <div className='p-3.5 md:p-0'>
                     <div className="hero-content text-neutral-content text-center relative ">
                         <div className="w-11/12 md:w-9/12 ">

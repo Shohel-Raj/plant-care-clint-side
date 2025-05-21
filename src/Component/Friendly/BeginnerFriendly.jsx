@@ -15,7 +15,7 @@ const BeginnerFriendly = () => {
                         <div className='md:col-span-3'>
                             <h1 className='font-bold text-2xl mb-4'>🌿 Beginner-Friendly Plants:</h1>
 
-                            <ul className="list-none space-y-2 italic grid md:grid-cols-2 text-gray-700">
+                            <ul className="list-none space-y-2 italic grid md:grid-cols-2 ">
                                 <li className="flex items-start gap-2">
                                     <span className="text-green-500">✅</span>
                                     Snake Plant – thrives in low light and needs little water.
