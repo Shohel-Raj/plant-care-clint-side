@@ -11,6 +11,7 @@ import AllPlants from "../Pages/AllPlants";
 import PrivateRoute from "../Component/PrivateRouter/PrivateRouter";
 import ViewDetails from "../Pages/ViewDetails";
 import Loader from "../Component/Loader/LOader";
+import UpdatePlant from "../Pages/UpdatePlant";
 
 const router = createBrowserRouter([
     {
@@ -30,6 +31,14 @@ const router = createBrowserRouter([
             path:"/viewdetails/:id",
             element:<PrivateRoute>
               <ViewDetails></ViewDetails>
+            </PrivateRoute>,
+            loader:({params})=>fetch(`http://localhost:3000/plant/${params.id}`),
+            hydrateFallbackElement:<Loader></Loader>
+        },
+        {
+            path:"/viewUpdate/:id",
+            element:<PrivateRoute>
+              <UpdatePlant></UpdatePlant>
             </PrivateRoute>,
             loader:({params})=>fetch(`http://localhost:3000/plant/${params.id}`),
             hydrateFallbackElement:<Loader></Loader>

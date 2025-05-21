@@ -1,42 +1,45 @@
-import React, { use, useEffect } from 'react';
-import { AuthContext } from '../Contexts/AuthContext';
+import React, { useEffect } from 'react';
+import { useLoaderData } from 'react-router';
 import { toast } from 'react-toastify';
 
-const AddPlants = () => {
+const UpdatePlant = () => {
 
-    useEffect(()=>{
-            document.title=`Plant Care | Add Plant`
-        },[])
+    const data = useLoaderData()
 
-    const { user } = use(AuthContext);
 
-    const handleSubmit = (e) => {
+    const { _id, wateringFrequency, userName, userEmail, plantName, nextWateringDate, lastWateredDate, image, healthStatus, description, category, careLevel } = data;
+
+
+
+
+    useEffect(() => {
+        document.title = `Plant Care | Update `
+    }, [])
+
+    const handleUpdate=(e)=>{
         e.preventDefault();
         const formData = new FormData(e.target);
-        const AddPlant = Object.fromEntries(formData.entries());
-        console.log(AddPlant);
-
-        // You can handle submission logic here (e.g., send to backend)
-
-        fetch('http://localhost:3000/addPlant', {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(AddPlant)
-        }).then(res => res.json()).then(data => {
-            console.log('submited', data);
-            if (data.insertedId) (
-                toast.success('Plant added Successfully')
-            )
-            e.target.reset()
-        })
+        const upDate = Object.fromEntries(formData.entries());
+        console.log(upDate);
 
 
 
+        fetch(`http://localhost:3000/plant/${_id}`, {
+                    method: 'PUT',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(upDate)
+                }).then(res => res.json()).then(data => {
+                    if(data.modifiedCount){
+                        toast.success('Update Successfuly')
+                    }else if(data.matchedCount){
+                        toast.warn(`You didn't change  any data yet`)
+                    }
+                    
 
-
-    };
+                })
+    }
 
 
 
@@ -45,22 +48,23 @@ const AddPlants = () => {
             <div className='w-11/12 md:w-10/12 mx-auto md:mt-5'>
 
                 <div className='space-y-3.5'>
-                    <h1 className='font-bold text-2xl'>New Leaf, Who Dis?</h1>
-                    <p className='italic md:w-2/4'>Give your new green friend a name, snap a pic, and set up care reminders. From thirsty ferns to sun-chasing succulents, every plant deserves VIP treatment!</p>
+                    <h1 className='font-bold text-2xl'>Glow Up Time!</h1>
+                    <p className='italic md:w-2/4'>Fresh pot? New spot? Let’s keep your leafy pal’s profile up to date. Update their name, pic, or care routine so they keep thriving in style!</p>
                 </div>
 
 
                 <form
-                    onSubmit={handleSubmit}
+                    onSubmit={handleUpdate}
                     className=" p-10 bg-white shadow my-5 rounded-lg space-y-4"
                 >
-                    <h2 className="text-2xl font-bold mb-4 text-center ">Add New Plant Form</h2>
+                    <h2 className="text-2xl font-bold mb-4 text-center ">Update Plant Form</h2>
 
                     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-4'>
                         <div>
                             <label className="block font-medium mb-1">Plant Name</label>
                             <input
                                 required
+                                defaultValue={plantName}
                                 type="text"
                                 name="plantName"
                                 className="w-full border rounded p-2"
@@ -76,6 +80,7 @@ const AddPlants = () => {
                             <label className="block font-medium mb-1">Category</label>
                             <select
                                 name="category"
+                               defaultValue={category}
                                 required
                                 className="w-full border rounded p-2"
                             >
@@ -92,10 +97,11 @@ const AddPlants = () => {
                             <label className="block font-medium mb-1">Care Level</label>
                             <select
                                 name="careLevel"
+                                defaultValue={careLevel}
                                 required
                                 className="w-full border rounded p-2"
                             >
-                                <option value="" disabled>Select Care Level</option>
+                                <option disabled>Select Care Level</option>
                                 <option value="easy">Easy</option>
                                 <option value="moderate">Moderate</option>
                                 <option value="difficult">Difficult</option>
@@ -106,6 +112,7 @@ const AddPlants = () => {
                             <label className="block font-medium mb-1">Watering Frequency</label>
                             <input
                                 type="text"
+                                defaultValue={wateringFrequency}
                                 required
                                 name="wateringFrequency"
                                 placeholder="e.g., every 3 days"
@@ -120,6 +127,7 @@ const AddPlants = () => {
                                 required
                                 name="lastWateredDate"
                                 className="w-full border rounded p-2"
+                                defaultValue={lastWateredDate}
                             />
                         </div>
 
@@ -128,6 +136,7 @@ const AddPlants = () => {
                             <input
                                 type="date"
                                 required
+                                defaultValue={nextWateringDate}
                                 name="nextWateringDate"
                                 className="w-full border rounded p-2"
                             />
@@ -138,6 +147,7 @@ const AddPlants = () => {
                             <label className="block font-medium mb-1">Health Status</label>
                             <input
                                 type="text"
+                                defaultValue={healthStatus}
                                 name="healthStatus"
                                 placeholder='healthStatus'
                                 className="w-full border rounded p-2"
@@ -151,7 +161,7 @@ const AddPlants = () => {
                                 readOnly
                                 type="email"
                                 name="userEmail"
-                                value={user?.email}
+                                value={userEmail}
                                 className="w-full border rounded p-2"
                             />
                         </div>
@@ -162,7 +172,7 @@ const AddPlants = () => {
                                 readOnly
                                 type="text"
                                 name="userName"
-                                value={user?.displayName}
+                                value={userName}
                                 className="w-full border rounded p-2"
 
                             />
@@ -172,6 +182,7 @@ const AddPlants = () => {
                             <input
                                 type="url"
                                 name="image"
+                                defaultValue={image}
                                 className="w-full border rounded p-2"
                                 placeholder='Photo URL Here'
                                 required
@@ -181,6 +192,7 @@ const AddPlants = () => {
                             <label className="block font-medium mb-1">Description</label>
                             <textarea
                                 name="description"
+                                defaultValue={description}
                                 className="w-full border rounded p-2"
                                 rows="3"
                                 required
@@ -190,9 +202,9 @@ const AddPlants = () => {
 
                     <button
                         type="submit"
-                        className="w-full bg-green-600 cursor-pointer text-white py-2 px-4 rounded hover:bg-green-700 transition"
+                        className="w-full cursor-pointer bg-green-600 text-white py-2 px-4 rounded hover:bg-green-700 transition"
                     >
-                        Submit
+                        Update 
                     </button>
                 </form>
             </div>
@@ -200,4 +212,4 @@ const AddPlants = () => {
     );
 };
 
-export default AddPlants;
+export default UpdatePlant;

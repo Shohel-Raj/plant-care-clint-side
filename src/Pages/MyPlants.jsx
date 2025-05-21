@@ -11,13 +11,13 @@ const MyPlants = () => {
 
     const { user, loading, } = use(AuthContext);
     const [dataa, setData] = useState([]);
-    const navigate=useNavigate();
+    const navigate = useNavigate();
 
     useEffect(() => {
 
 
-        document.title=`Plant Care | My Plant`
-        
+        document.title = `Plant Care | My Plant`
+
         fetch(`http://localhost:3000/plant?emailParams=${user.email}`).then(res => res.json()).then(data => {
             setData(data);
         })
@@ -64,10 +64,13 @@ const MyPlants = () => {
 
     }
 
-const handleViewDetaills=(id)=>{
-    
-    navigate(`/viewdetails/${id}`)
-}
+    const handleViewDetaills = (id) => {
+
+        navigate(`/viewdetails/${id}`)
+    }
+    const handleUpdate =(id)=>{
+        navigate(`/viewUpdate/${id}`)
+    }
 
 
 
@@ -124,8 +127,9 @@ const handleViewDetaills=(id)=>{
                                                 </td>
                                                 <td>{singledata.healthStatus}</td>
                                                 <th>
-                                                    <button onClick={() => handleViewDetaills(singledata._id)} className="btn btn-ghost btn-xs">Details</button>
-                                                    <button onClick={() => handleDelet(singledata._id)} className="btn btn-ghost btn-xs">Delete</button>
+                                                    <button onClick={() => handleViewDetaills(singledata._id)} className="uppercase btn btn-ghost btn-xs">Details</button>
+                                                    <button onClick={() => handleUpdate(singledata._id)} className="uppercase btn btn-ghost btn-xs">Update</button>
+                                                    <button onClick={() => handleDelet(singledata._id)} className="uppercase btn btn-ghost btn-xs">Delete</button>
                                                 </th>
                                             </tr>
                                         )
@@ -138,7 +142,7 @@ const handleViewDetaills=(id)=>{
                             </table>
                         </div> : <div>
                             <EmptyMyPlant></EmptyMyPlant>
-                            
+
                         </div>
                     }
                 </div>
