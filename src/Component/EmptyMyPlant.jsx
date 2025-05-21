@@ -6,8 +6,8 @@ import { Link } from 'react-router';
 const EmptyMyPlant = () => {
 
     const style = {
-  height: 300,
-};
+        height: 300,
+    };
     return (
         <>
             <section className="grid justify-center items-center">

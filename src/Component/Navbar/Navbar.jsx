@@ -39,7 +39,7 @@ const Navbar = () => {
                 <div className="navbar-start">
                     <div className='flex btn btn-ghost p-0'>
                         <img className='w-10' src="../../../public/plant.png" />
-                        <h1 className=" text-xl uppercase p-0"> Plant Care</h1>
+                        <h1 className=" text-xl uppercase font-extrabold italic p-0"> Plant Care</h1>
                     </div>
                 </div>
                 <div className="navbar-center hidden lg:flex">
