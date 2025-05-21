@@ -25,7 +25,9 @@ const router = createBrowserRouter([
         },
         {
             path:"/AllPlant",
-            Component:AllPlants
+            Component:AllPlants,
+            loader:()=>fetch('http://localhost:3000/allPlant'),
+            hydrateFallbackElement:<Loader></Loader>
         },
         {
             path:"/viewdetails/:id",
