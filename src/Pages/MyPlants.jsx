@@ -85,7 +85,7 @@ const MyPlants = () => {
                                 <h1 className='font-bold text-2xl'>Your Plant Parade</h1>
                                 <p className='md:w-2/5 italic mt-3'>All the leafy legends you’ve adopted gather here—check in to water, feed, and cheer on every new sprout in your personal jungle!</p>
                             </div>
-                            <table className="table ">
+                            <table className="table overflow-x-auto">
                                 {/* head */}
                                 <thead>
                                     <tr>

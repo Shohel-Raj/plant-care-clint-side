@@ -67,7 +67,7 @@ const AllPlants = () => {
 
 
 
-                            <table className="table mb-7">
+                            <table className="table mb-7 overflow-x-auto">
                                 {/* head */}
                                 <thead>
                                     <tr>
