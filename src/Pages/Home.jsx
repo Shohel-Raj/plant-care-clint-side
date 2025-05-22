@@ -5,6 +5,10 @@ import CommonCare from '../Component/CommonMistake/CommonCare';
 import BeginnerFriendly from '../Component/Friendly/BeginnerFriendly';
 import { useLoaderData } from 'react-router';
 
+import 'aos/dist/aos.css';
+import Aos from 'aos';
+
+ Aos.init();
 
 const Home = () => {
      useEffect(()=>{
@@ -27,16 +31,16 @@ const Home = () => {
                 <div className='my-7 w-11/12 md:w-10/12 mx-auto grid grid-cols-1 md:grid-cols-3 gap-3'>
 
                     {
-                        plantData.map(singlePlant=> <NewPlantCard key={singlePlant._id} singlePlant={singlePlant}></NewPlantCard>)
+                        plantData.map(singlePlant=> <NewPlantCard data-aos="zoom-out-up" data-aos-duration="1000" key={singlePlant._id} singlePlant={singlePlant}></NewPlantCard>)
                     }
                 </div>
 
 
             </div>
-            <div className='my-7'>
-                <CommonCare></CommonCare>
+            <div className='my-7' >
+                <CommonCare ></CommonCare>
             </div>
-            <div className='bg-base-200 py-1.5'>
+            <div className='bg-base-200 py-1.5' >
                     <BeginnerFriendly></BeginnerFriendly>
             </div>
 

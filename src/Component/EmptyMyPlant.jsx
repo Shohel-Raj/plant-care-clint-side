@@ -11,11 +11,13 @@ const EmptyMyPlant = () => {
     return (
         <>
             <section className="grid justify-center items-center">
-                <div>
-                    <Lottie animationData={anim} style={style} />
+                <div data-aos="zoom-out-up" data-aos-duration="1000" className="grid justify-center items-center">
+                    <div >
+                        <Lottie animationData={anim} style={style} />
+                    </div>
+                    <h1 className='text-center mb-3 uppercase font-bold italic'>No plant Added Yet</h1>
+                    <Link className='btn' to='/addPlant'>Add Now!</Link>
                 </div>
-                <h1 className='text-center mb-3 uppercase font-bold italic'>No plant Added Yet</h1>
-                <Link className='btn' to='/addPlant'>Add Now!</Link>
             </section>
         </>
     );

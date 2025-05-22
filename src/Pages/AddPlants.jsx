@@ -18,7 +18,7 @@ const AddPlants = () => {
 
         // You can handle submission logic here (e.g., send to backend)
 
-        fetch('http://localhost:3000/addPlant', {
+        fetch('https://plant-care-server-azure.vercel.app/addPlant', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -51,6 +51,8 @@ const AddPlants = () => {
 
 
                 <form
+                    data-aos="zoom-out-right"
+                    data-aos-duration="1000"
                     onSubmit={handleSubmit}
                     className=" p-10 bg-white shadow my-5 rounded-lg space-y-4"
                 >

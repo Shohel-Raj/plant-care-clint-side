@@ -12,7 +12,7 @@ const ViewCard = ({ data }) => {
     const { _id, wateringFrequency, userName, userEmail, plantName, nextWateringDate, lastWateredDate, image, healthStatus, description, category, careLevel } = data;
     return (
         <div>
-            <div className="grid grid-rows-1 md:grid-cols-3 shadow-xl rounded-2xl py-5 px-3 gap-6 ">
+            <div  className="grid grid-rows-1 md:grid-cols-3 shadow-xl rounded-2xl py-5 px-3 gap-6 ">
                 <div className='rounded-2xl'>
                     <img className='w-[400px] rounded-2xl' src={image} alt="" />
                 </div>

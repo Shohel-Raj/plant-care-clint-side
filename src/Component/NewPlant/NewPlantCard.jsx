@@ -1,5 +1,9 @@
+import Aos from 'aos';
 import React from 'react';
 import { Link, useNavigate } from 'react-router';
+import 'aos/dist/aos.css';
+
+ Aos.init();
 
 const NewPlantCard = ({ singlePlant }) => {
 
@@ -16,7 +20,7 @@ const NewPlantCard = ({ singlePlant }) => {
 
     return (
         <>
-            <div className="card lg:card-side bg-base-100 dark:bg-white shadow-sm">
+            <div data-aos="fade-up-right" className="card lg:card-side bg-base-100 dark:bg-white shadow-sm">
                 <figure>
                     <img
                         src={image}

@@ -18,7 +18,7 @@ const MyPlants = () => {
 
         document.title = `Plant Care | My Plant`
 
-        fetch(`http://localhost:3000/plant?emailParams=${user.email}`).then(res => res.json()).then(data => {
+        fetch(`https://plant-care-server-azure.vercel.app/plant?emailParams=${user.email}`).then(res => res.json()).then(data => {
             setData(data);
         })
     }, [user])
@@ -42,7 +42,7 @@ const MyPlants = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:3000/plant/${id}`, {
+                fetch(`https://plant-care-server-azure.vercel.app/plant/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json()).then((data => {
@@ -101,7 +101,8 @@ const MyPlants = () => {
                                     {/* row 1 */}
                                     {
                                         dataa.map((singledata, index) =>
-                                            <tr key={singledata._id}>
+                                            <tr data-aos="fade-up"
+                                data-aos-duration="2000" key={singledata._id}>
                                                 <th>
                                                     <p>{index + 1}</p>
                                                 </th>

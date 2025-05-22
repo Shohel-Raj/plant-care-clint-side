@@ -16,7 +16,7 @@ const UpdatePlant = () => {
         document.title = `Plant Care | Update `
     }, [])
 
-    const handleUpdate=(e)=>{
+    const handleUpdate = (e) => {
         e.preventDefault();
         const formData = new FormData(e.target);
         const upDate = Object.fromEntries(formData.entries());
@@ -24,21 +24,21 @@ const UpdatePlant = () => {
 
 
 
-        fetch(`http://localhost:3000/plant/${_id}`, {
-                    method: 'PUT',
-                    headers: {
-                        'content-type': 'application/json'
-                    },
-                    body: JSON.stringify(upDate)
-                }).then(res => res.json()).then(data => {
-                    if(data.modifiedCount){
-                        toast.success('Update Successfuly')
-                    }else if(data.matchedCount){
-                        toast.warn(`You didn't change  any data yet`)
-                    }
-                    
+        fetch(`https://plant-care-server-azure.vercel.app/plant/${_id}`, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(upDate)
+        }).then(res => res.json()).then(data => {
+            if (data.modifiedCount) {
+                toast.success('Update Successfuly')
+            } else if (data.matchedCount) {
+                toast.warn(`You didn't change  any data yet`)
+            }
 
-                })
+
+        })
     }
 
 
@@ -54,6 +54,8 @@ const UpdatePlant = () => {
 
 
                 <form
+                    data-aos="zoom-out-right"
+                    data-aos-duration="1000"
                     onSubmit={handleUpdate}
                     className=" p-10 bg-white shadow my-5 rounded-lg space-y-4"
                 >
@@ -80,7 +82,7 @@ const UpdatePlant = () => {
                             <label className="block font-medium mb-1">Category</label>
                             <select
                                 name="category"
-                               defaultValue={category}
+                                defaultValue={category}
                                 required
                                 className="w-full border rounded p-2"
                             >
@@ -204,7 +206,7 @@ const UpdatePlant = () => {
                         type="submit"
                         className="w-full cursor-pointer bg-green-600 text-white py-2 px-4 rounded hover:bg-green-700 transition"
                     >
-                        Update 
+                        Update
                     </button>
                 </form>
             </div>

@@ -28,10 +28,10 @@ const AllPlants = () => {
         let url = ``
 
         if (filter === 'Easy to Diffecult') {
-            url = 'http://localhost:3000/allPlant'
+            url = 'https://plant-care-server-azure.vercel.app/allPlant'
 
         } else (
-            url = 'http://localhost:3000/allPlant?order=desc'
+            url = 'https://plant-care-server-azure.vercel.app/allPlant?order=desc'
         )
 
         fetch(url).then(res => res.json()).then(data => {
@@ -59,7 +59,7 @@ const AllPlants = () => {
                                     <option disabled={true}>Select what you went</option>
                                     <option>Diffecult to Easy</option>
                                     <option>Easy to Diffecult</option>
-                                    
+
 
                                 </select>
                             </div>
@@ -67,7 +67,7 @@ const AllPlants = () => {
 
 
 
-                            <table className="table mb-7">
+                            <table  className="table mb-7">
                                 {/* head */}
                                 <thead>
                                     <tr>
@@ -83,7 +83,8 @@ const AllPlants = () => {
                                     {/* row 1 */}
                                     {
                                         dataa.map((singledata, index) =>
-                                            <tr key={singledata._id}>
+                                            <tr data-aos="fade-up"
+                                data-aos-duration="1000" key={singledata._id}>
                                                 <th>
                                                     <p>{index + 1}</p>
                                                 </th>
