@@ -63,7 +63,7 @@ const SignIn = () => {
 
     return (
         <>
-            <div className="card bg-base-100 mx-auto w-full mt-3 max-w-sm shrink-0 shadow-2xl">
+            <div className="card bg-base-100 my-5 mx-auto w-full mt-3 max-w-sm shrink-0 shadow-2xl">
                 <div className="card-body">
                     <h1 className="text-5xl text-center font-bold">Sign in</h1>
                     <form onSubmit={handleSingUp} className="fieldset">

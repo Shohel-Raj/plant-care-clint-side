@@ -67,7 +67,7 @@ const AllPlants = () => {
 
 
 
-                            <table  className="table mb-7">
+                            <table className="table mb-7">
                                 {/* head */}
                                 <thead>
                                     <tr>
@@ -84,7 +84,7 @@ const AllPlants = () => {
                                     {
                                         dataa.map((singledata, index) =>
                                             <tr data-aos="fade-up"
-                                data-aos-duration="1000" key={singledata._id}>
+                                                data-aos-duration="1000" key={singledata._id}>
                                                 <th>
                                                     <p>{index + 1}</p>
                                                 </th>

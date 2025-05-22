@@ -1,11 +1,20 @@
 import React, { use } from 'react';
-import { Link, NavLink } from 'react-router';
+import { Link, NavLink, useNavigate } from 'react-router';
 import { Tooltip } from 'react-tooltip';
 import { AuthContext } from '../../Contexts/AuthContext';
 import { Links } from 'react-router';
 import { toast } from 'react-toastify';
+import img from '../../assets/plant.png'
 
 const Navbar = () => {
+
+
+    const navigation=useNavigate();
+
+
+    const handleBTN=()=>{
+        navigation('/')
+    }
 
     const links = <>
         <li><NavLink to='/' className={({ isActive }) => isActive ? 'font-bold border-b-2 uppercase' : 'uppercase'}>Home</NavLink> </li>
@@ -37,8 +46,8 @@ const Navbar = () => {
         <>
             <div className="navbar bg-base-100  w-11/12 md:w-10/12 mx-auto pl-0" >
                 <div className="navbar-start">
-                    <div className='flex btn btn-ghost p-0'>
-                        <img className='w-10' src="../../../public/plant.png" />
+                    <div onClick={handleBTN} className='flex btn btn-ghost p-0'>
+                        <img className='w-10' src={img} />
                         <h1 className=" text-xl uppercase font-extrabold italic p-0"> Plant Care</h1>
                     </div>
                 </div>

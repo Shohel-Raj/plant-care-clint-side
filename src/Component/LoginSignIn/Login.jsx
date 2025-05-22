@@ -46,14 +46,25 @@ const Login = () => {
 
     return (
         <>
-            <div className="card bg-base-100 mt-3 mx-auto w-full max-w-sm shrink-0 shadow-2xl">
+            <div className="card bg-base-100 my-5 mx-auto w-full max-w-sm shrink-0 shadow-2xl">
                 <div className="card-body">
                     <h1 className="text-5xl font-bold text-center">Login now!</h1>
                     <form onSubmit={handleLogin} className="fieldset">
                         <label className="label">Email</label>
-                        <input type="email" name='email' className="input" placeholder="Email" />
+                        <input required type="email" name='email' className="input" placeholder="Email" />
                         <label className="label">Password</label>
-                        <input type="password" name='password' className="input" placeholder="Password" />
+                         <label className="input validator">
+
+                            <input
+                                name='password'
+                                type="password"
+                                required
+                                placeholder="Password"
+                                minLength="8"
+                                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                                title="Must be more than 8 characters, including number, lowercase letter, uppercase letter"
+                            />
+                        </label>
 
                         <button className="btn btn-neutral mt-4">Login</button>
                         <p className="px-6 text-sm text-center ">Don't have an account yet? <Link to='/signIn' className='underline hover:text-white hover:bg-blue-600 hover:rounded-sm'>Sign In</Link> </p>

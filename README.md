@@ -19,6 +19,11 @@ This is a modern (Plant Care) React project built with Tailwind CSS and enhanced
 - 🌀 SwiperJS for sliders and carousels
 
 
+## Live Demo
+
+Check out the live version of the project [Plant Care](https://plant-care-tracker-4cf37.web.app/).
+
+
 ## 📦 Dependencies
 
 | Package             | Version    | Description |
@@ -40,7 +45,7 @@ This is a modern (Plant Care) React project built with Tailwind CSS and enhanced
 
 ## 💡 Dark/Light Mode
 
-This project supports dynamic theme switching using **DaisyUI**. Users can toggle between dark and light themes easily, and the preference is saved across sessions.
+This project supports dynamic theme switching using **DaisyUI**. Users can toggle between dark and light themes easily.
 
 
 
