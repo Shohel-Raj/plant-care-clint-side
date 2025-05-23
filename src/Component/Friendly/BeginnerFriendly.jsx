@@ -10,7 +10,7 @@ const BeginnerFriendly = () => {
                 </div>
 
 
-                    <div data-aos="zoom-in-down" className="grid grid-rows-1 md:grid-cols-5  shadow-xl rounded-2xl py-5 px-3 gap-6 ">
+                    <div data-aos="zoom-in-down" className="grid grid-rows-1 md:grid-cols-5  shadow-xl rounded-2xl py-5 px-3 gap-6 border border-[#97f7b9]">
 
                         <div className='md:col-span-3'>
                             <h1 className='font-bold text-2xl mb-4'>🌿 Beginner-Friendly Plants:</h1>

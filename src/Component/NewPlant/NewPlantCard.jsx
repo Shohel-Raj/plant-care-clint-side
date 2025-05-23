@@ -20,7 +20,7 @@ const NewPlantCard = ({ singlePlant }) => {
 
     return (
         <>
-            <div data-aos="fade-up-right" className="card lg:card-side bg-base-100 dark:bg-white shadow-sm">
+            <div data-aos="fade-up-right" className="card border border-[#97f7b9] lg:card-side bg-base-100 dark:bg-white shadow-sm">
                 <figure>
                     <img
                         src={image}

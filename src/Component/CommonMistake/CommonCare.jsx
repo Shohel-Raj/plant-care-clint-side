@@ -12,7 +12,7 @@ const CommonCare = () => {
                 </div>
 
 
-                <div data-aos="flip-down" className="grid grid-rows-1 md:grid-cols-5 shadow-xl  rounded-2xl py-5 px-3 gap-6 ">
+                <div data-aos="flip-down" className="grid grid-rows-1 md:grid-cols-5 shadow-xl  rounded-2xl py-5 px-3 gap-6 border border-[#97f7b9]">
                     <div className="bg-[url('../mistake.jpeg')] md:col-span-2 min-h-56 bg-center  bg-cover rounded-2xl">
 
                     </div>
