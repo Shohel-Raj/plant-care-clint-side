@@ -1,10 +1,10 @@
 import React from 'react';
-import img from '/1.jpeg'
+import img from '/1.jpg'
 const Slider1 = () => {
     return (
         <>
             <div
-                className="hero min-h-[calc(100vh-100px)] rounded-3xl overflow-hidden "
+                className="hero min-h-[calc(100vh-250px)] rounded-3xl overflow-hidden "
                 style={{
                     backgroundImage: `url(${img})`,
                 }}

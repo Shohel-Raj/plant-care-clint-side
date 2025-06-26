@@ -18,7 +18,7 @@ const MyPlants = () => {
 
         document.title = `Plant Care | My Plant`
 
-        fetch(`https://plant-care-server-azure.vercel.app/plant?emailParams=${user.email}`).then(res => res.json()).then(data => {
+        fetch(`http://localhost:3000/plant?emailParams=${user.email}`).then(res => res.json()).then(data => {
             setData(data);
         })
     }, [user])
@@ -42,7 +42,7 @@ const MyPlants = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`https://plant-care-server-azure.vercel.app/plant/${id}`, {
+                fetch(`http://localhost:3000/plant/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json()).then((data => {

@@ -18,7 +18,7 @@ const AddPlants = () => {
 
         // You can handle submission logic here (e.g., send to backend)
 
-        fetch('https://plant-care-server-azure.vercel.app/addPlant', {
+        fetch('http://localhost:3000/addPlant', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

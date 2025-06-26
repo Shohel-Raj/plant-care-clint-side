@@ -24,7 +24,7 @@ const UpdatePlant = () => {
 
 
 
-        fetch(`https://plant-care-server-azure.vercel.app/plant/${_id}`, {
+        fetch(`http://localhost:3000/plant/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

@@ -22,7 +22,7 @@ const router = createBrowserRouter([
         {
             index:true,
             Component:Home,
-            loader:()=>fetch('https://plant-care-server-azure.vercel.app/latestPlant'),
+            loader:()=>fetch('http://localhost:3000/latestPlant'),
             hydrateFallbackElement:<Loader></Loader>
         },
         {
@@ -30,7 +30,7 @@ const router = createBrowserRouter([
             element:<PrivateRoute>
               <AllPlants></AllPlants>
             </PrivateRoute>,
-            loader:()=>fetch('https://plant-care-server-azure.vercel.app/allPlant'),
+            loader:()=>fetch('http://localhost:3000/allPlant'),
             hydrateFallbackElement:<Loader></Loader>
         },
         {
@@ -38,7 +38,7 @@ const router = createBrowserRouter([
             element:<PrivateRoute>
               <ViewDetails></ViewDetails>
             </PrivateRoute>,
-            loader:({params})=>fetch(`https://plant-care-server-azure.vercel.app/plant/${params.id}`),
+            loader:({params})=>fetch(`http://localhost:3000/plant/${params.id}`),
             hydrateFallbackElement:<Loader></Loader>
         },
         {
@@ -46,7 +46,7 @@ const router = createBrowserRouter([
             element:<PrivateRoute>
               <UpdatePlant></UpdatePlant>
             </PrivateRoute>,
-            loader:({params})=>fetch(`https://plant-care-server-azure.vercel.app/plant/${params.id}`),
+            loader:({params})=>fetch(`http://localhost:3000/plant/${params.id}`),
             hydrateFallbackElement:<Loader></Loader>
         },
         {
