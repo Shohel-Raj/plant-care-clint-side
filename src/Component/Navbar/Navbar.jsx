@@ -19,6 +19,9 @@ const Navbar = () => {
     const links = <>
         <li><NavLink to='/' className={({ isActive }) => isActive ? 'font-bold border-b-2 uppercase' : 'uppercase'}>Home</NavLink> </li>
         <li><NavLink to='/blog' className={({ isActive }) => isActive ? 'font-bold border-b-2 uppercase' : 'uppercase'}>Blog</NavLink> </li>
+        <li><NavLink to='/q&a' className={({ isActive }) => isActive ? 'font-bold border-b-2 uppercase' : 'uppercase'}>Asked Question</NavLink> </li>
+        <li><NavLink to='/Contact' className={({ isActive }) => isActive ? 'font-bold border-b-2 uppercase' : 'uppercase'}>Contact</NavLink> </li>
+        <li><NavLink to='/about' className={({ isActive }) => isActive ? 'font-bold border-b-2 uppercase' : 'uppercase'}>About Us</NavLink> </li>
         <li><NavLink to='/AllPlant' className={({ isActive }) => isActive ? 'font-bold border-b-2 uppercase' : 'uppercase'}>All Plants</NavLink> </li>
         <li><NavLink to='/myPlant' className={({ isActive }) => isActive ? 'font-bold border-b-2 uppercase' : 'uppercase'}>My Plants</NavLink> </li>
         <li><NavLink to='/addPlant' className={({ isActive }) => isActive ? 'font-bold border-b-2 uppercase' : 'uppercase'}>Add Plant</NavLink> </li>

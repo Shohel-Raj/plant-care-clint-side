@@ -14,6 +14,9 @@ import Loader from "../Component/Loader/LOader";
 import UpdatePlant from "../Pages/UpdatePlant";
 import MyBlog from "../Pages/MyBlog";
 import BlogDetails from "../Component/DetaillsCard/BlogDetails";
+import AboutUs from "../Pages/About";
+import Contact from "../Pages/Contact";
+import QAPage from "../Pages/QAPage";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +29,18 @@ const router = createBrowserRouter([
         Component: Home,
         loader: () => fetch('http://localhost:3000/latestPlant'),
         hydrateFallbackElement: <Loader></Loader>
+      },
+      {
+        path:'/about',
+        Component:AboutUs
+      },
+      {
+        path:'/contact',
+        Component:Contact
+      },
+      {
+        path:'/q&a',
+        Component:QAPage
       },
       {
         path: "/blog",
