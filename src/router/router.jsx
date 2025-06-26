@@ -12,67 +12,81 @@ import PrivateRoute from "../Component/PrivateRouter/PrivateRouter";
 import ViewDetails from "../Pages/ViewDetails";
 import Loader from "../Component/Loader/LOader";
 import UpdatePlant from "../Pages/UpdatePlant";
+import MyBlog from "../Pages/MyBlog";
+import BlogDetails from "../Component/DetaillsCard/BlogDetails";
 
 const router = createBrowserRouter([
-    {
-      path: "/",
-      Component:RootLayout,
-      errorElement:<Error></Error>,
-      children:[
-        {
-            index:true,
-            Component:Home,
-            loader:()=>fetch('http://localhost:3000/latestPlant'),
-            hydrateFallbackElement:<Loader></Loader>
-        },
-        {
-            path:"/AllPlant",
-            element:<PrivateRoute>
-              <AllPlants></AllPlants>
-            </PrivateRoute>,
-            loader:()=>fetch('http://localhost:3000/allPlant'),
-            hydrateFallbackElement:<Loader></Loader>
-        },
-        {
-            path:"/viewdetails/:id",
-            element:<PrivateRoute>
-              <ViewDetails></ViewDetails>
-            </PrivateRoute>,
-            loader:({params})=>fetch(`http://localhost:3000/plant/${params.id}`),
-            hydrateFallbackElement:<Loader></Loader>
-        },
-        {
-            path:"/viewUpdate/:id",
-            element:<PrivateRoute>
-              <UpdatePlant></UpdatePlant>
-            </PrivateRoute>,
-            loader:({params})=>fetch(`http://localhost:3000/plant/${params.id}`),
-            hydrateFallbackElement:<Loader></Loader>
-        },
-        {
-            path:"/loginSignInPage",
-            Component:LoginSignIn
-        },
-        {
-            path:"/signIn",
-            Component:SignIn
-        },
-        {
-            path:"/addPlant",
-            element:<PrivateRoute>
-              <AddPlants></AddPlants>
-            </PrivateRoute>
-        },
-        {
-            path:"/myPlant",
-            element:<PrivateRoute>
-              <MyPlants></MyPlants>
-            </PrivateRoute>
-        }
-      ]
-    },
+  {
+    path: "/",
+    Component: RootLayout,
+    errorElement: <Error></Error>,
+    children: [
+      {
+        index: true,
+        Component: Home,
+        loader: () => fetch('http://localhost:3000/latestPlant'),
+        hydrateFallbackElement: <Loader></Loader>
+      },
+      {
+        path: "/blog",
+        Component: MyBlog,
+        loader: () => fetch('http://localhost:3000/blogs'),
+        hydrateFallbackElement: <Loader></Loader>
+      },
+      {
+        path: "/viewBlogDetails/:id",
+        Component:BlogDetails,
+        loader: ({ params }) => fetch(`http://localhost:3000/blog/${params.id}`),
+        hydrateFallbackElement: <Loader></Loader>
+      },
+      {
+        path: "/AllPlant",
+        element: <PrivateRoute>
+          <AllPlants></AllPlants>
+        </PrivateRoute>,
+        loader: () => fetch('http://localhost:3000/allPlant'),
+        hydrateFallbackElement: <Loader></Loader>
+      },
+      {
+        path: "/viewdetails/:id",
+        element: <PrivateRoute>
+          <ViewDetails></ViewDetails>
+        </PrivateRoute>,
+        loader: ({ params }) => fetch(`http://localhost:3000/plant/${params.id}`),
+        hydrateFallbackElement: <Loader></Loader>
+      },
+      {
+        path: "/viewUpdate/:id",
+        element: <PrivateRoute>
+          <UpdatePlant></UpdatePlant>
+        </PrivateRoute>,
+        loader: ({ params }) => fetch(`http://localhost:3000/plant/${params.id}`),
+        hydrateFallbackElement: <Loader></Loader>
+      },
+      {
+        path: "/loginSignInPage",
+        Component: LoginSignIn
+      },
+      {
+        path: "/signIn",
+        Component: SignIn
+      },
+      {
+        path: "/addPlant",
+        element: <PrivateRoute>
+          <AddPlants></AddPlants>
+        </PrivateRoute>
+      },
+      {
+        path: "/myPlant",
+        element: <PrivateRoute>
+          <MyPlants></MyPlants>
+        </PrivateRoute>
+      }
+    ]
+  },
 
-  ]);
+]);
 
 
-  export default router;
+export default router;

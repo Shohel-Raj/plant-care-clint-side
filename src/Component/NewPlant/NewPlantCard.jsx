@@ -1,42 +1,41 @@
 import Aos from 'aos';
 import React from 'react';
-import { Link, useNavigate } from 'react-router';
+import { useNavigate } from 'react-router';
 import 'aos/dist/aos.css';
 
- Aos.init();
+Aos.init();
 
 const NewPlantCard = ({ singlePlant }) => {
+  const { _id, plantName, image, healthStatus, category } = singlePlant;
+  const navigate = useNavigate();
 
-    const { _id,    plantName,   image, healthStatus,  category} = singlePlant;
+  const handleView = id => {
+    navigate(`/viewdetails/${id}`);
+  };
 
+  return (
+    <div data-aos="fade-up-right" className="relative rounded-2xl shadow-2xl bg-white overflow-hidden max-w-sm">
+      <div className="p-4 space-y-2">
+        <h2 className="text-lg font-semibold">{plantName}</h2>
+        <p className="text-sm font-medium uppercase text-gray-600">Category: {category}</p>
+        <p className="text-sm font-medium uppercase text-gray-600">Health Status: {healthStatus}</p>
+      </div>
 
-    const naigation =useNavigate();
-
-
-    const handleView =id =>{
-        naigation(`/viewdetails/${id}`)
-    }
-
-
-    return (
-        <>
-            <div data-aos="fade-up-right" className="card border border-[#97f7b9] lg:card-side bg-base-100 dark:bg-white shadow-sm">
-                <figure>
-                    <img
-                        src={image}
-                        alt="Album" />
-                </figure>
-                <div className="card-body">
-                    <h2 className="card-title">{plantName}</h2>
-                    <p className='uppercase font-semibold'>Category : {category}.</p>
-                    <p className='uppercase font-semibold'>Health Status : {healthStatus}.</p>
-                    <div className="card-actions justify-end">
-                        <button onClick={()=>handleView(_id)} className="btn rounded bg-[#34eb74] text-white hover:bg-[#97f7b9] hover:text-black">View Details</button>
-                    </div>
-                </div>
-            </div>
-        </>
-    );
+      <div className="relative w-full h-52 mt-2">
+        <img
+          src={image}
+          alt={plantName}
+          className="w-full h-full object-cover"
+        />
+        <button
+          onClick={() => handleView(_id)}
+          className="absolute -top-4 left-4 bg-[#34eb74] cursor-pointer text-white hover:bg-[#97f7b9] hover:text-black rounded-full px-4 py-2 shadow-lg text-sm font-medium  transition"
+        >
+          View Details →
+        </button>
+      </div>
+    </div>
+  );
 };
 
 export default NewPlantCard;
