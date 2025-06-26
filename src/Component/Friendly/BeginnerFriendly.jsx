@@ -3,8 +3,8 @@ import React from 'react';
 const BeginnerFriendly = () => {
     return (
         <>
-            <div className='w-11/12 md:w-10/12 mx-auto py-10'>
-                <div className=' md:mt-5 mt-3 mb-5'>
+            <div className='w-11/12 md:w-10/12 mx-auto '>
+                <div className=' md:pt-5 pt-3 pb-5 '>
                     <h1 className='font-bold text-2xl'>Start your plant journey with confidence.</h1>
                     <p className='md:w-3/5 italic mt-3'>Perfect for beginners, these low-maintenance plants are easy to care for and thrive in almost any space. A great way to grow your confidence—and your greenery!</p>
                 </div>
@@ -61,7 +61,7 @@ const BeginnerFriendly = () => {
 
                         </div>
 
-                        <div className="bg-[url('../friendly.jpeg')] min-h-56 bg-center col-span-2  bg-cover rounded-2xl">
+                        <div className="bg-[url('../friendly.jpg')] min-h-56 bg-center col-span-2  bg-cover rounded-2xl">
 
                         </div>
 

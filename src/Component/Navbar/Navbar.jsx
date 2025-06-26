@@ -9,10 +9,10 @@ import img from '../../assets/plant.png'
 const Navbar = () => {
 
 
-    const navigation=useNavigate();
+    const navigation = useNavigate();
 
 
-    const handleBTN=()=>{
+    const handleBTN = () => {
         navigation('/')
     }
 
@@ -46,10 +46,10 @@ const Navbar = () => {
         <>
             <div className="navbar bg-base-100 dark:bg-white w-11/12 md:w-10/12 mx-auto pl-0" >
                 <div className="navbar-start">
-                    <div onClick={handleBTN} className='flex btn btn-gost bg-none p-0'>
-                        <img className='w-10' src={img} />
-                        <h1 className=" text-xl hidden md:flex uppercase font-extrabold italic p-0"> Plant Care</h1>
-                        <h1 className='text-xl md:hidden uppercase font-extrabold italic p-0'>P.Care</h1>
+                    <div onClick={handleBTN} className="flex items-center p-0 cursor-pointer">
+                        <img className="w-10" src={img} alt="Logo" />
+                        <h1 className="text-xl hidden md:flex uppercase font-extrabold italic p-0">Plant Care</h1>
+                        <h1 className="text-xl md:hidden uppercase font-extrabold italic p-0">P.Care</h1>
                     </div>
                 </div>
                 <div className="navbar-center hidden lg:flex">

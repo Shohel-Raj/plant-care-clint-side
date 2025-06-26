@@ -8,10 +8,10 @@ import { useNavigate } from 'react-router';
 const Footer = () => {
 
 
-    const navigate =useNavigate();
+    const navigate = useNavigate();
 
 
-    const handleBTN=()=>{
+    const handleBTN = () => {
         navigate('/')
     }
 
@@ -24,9 +24,9 @@ const Footer = () => {
                 <div className='flex justify-between gap-3 md:flex-row flex-col'>
 
                     <div >
-                        <div onClick={handleBTN} className=' btn btn-ghost p-0 mx-0'>
-                            <img className='w-10' src={img} />
-                            <h1 className=" text-xl uppercase font-extrabold italic p-0"> Plant Care</h1>
+                        <div onClick={handleBTN} className="flex items-center p-0 cursor-pointer">
+                            <img className="w-10" src={img} alt="Logo" />
+                            <h1 className="text-xl flex uppercase font-extrabold italic p-0">Plant Care</h1>
                         </div>
                         <p className='small italic'>Helping You Grow, One Leaf at a Time.</p>
                     </div>

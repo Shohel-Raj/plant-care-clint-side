@@ -6,14 +6,14 @@ const CommonCare = () => {
     return (
         <>
             <div  className='w-11/12 md:w-10/12 mx-auto'>
-                <div className=' md:mt-5 mt-3 mb-5'>
+                <div className=' md:pt-5 pt-3 pb-5 '>
                     <h1 className='font-bold text-2xl'>Healthy Plants Start with Smart Habits</h1>
                     <p className='md:w-4/5 italic mt-3'>Whether you're a beginner or a seasoned plant parent, even small mistakes can lead to big problems. Learn the most common plant care pitfalls—and how to avoid them—to help your green friends grow strong, vibrant, and happy.</p>
                 </div>
 
 
                 <div data-aos="flip-down" className="grid grid-rows-1 md:grid-cols-5 shadow-xl  rounded-2xl py-5 px-3 gap-6 border border-[#97f7b9]">
-                    <div className="bg-[url('../mistake.jpeg')] md:col-span-2 min-h-56 bg-center  bg-cover rounded-2xl">
+                    <div className="bg-[url('../mistake.jpg')] md:col-span-2 min-h-56 bg-center  bg-cover rounded-2xl">
 
                     </div>
                     <div className='md:col-span-3'>
