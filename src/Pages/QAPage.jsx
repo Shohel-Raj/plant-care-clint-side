@@ -122,9 +122,9 @@ const QuestionList = () => {
                     <div className="mt-3 space-y-2 text-sm text-gray-700">
                       {q.answers.length ? (
                         q.answers.map((a, i) => (
-                          <div key={i} className="bg-base-200 p-2 rounded-md">
-                            <p className="italic text-gray-500">"{a.text}"</p>
-                            <p className="text-xs text-gray-400 mt-1">— {a.author}</p>
+                          <div key={i} className="bg-[#40935d] p-2 rounded-md">
+                            <p className="italic text-white">"{a.text}"</p>
+                            <p className="text-xs text-gray-200 mt-1">— {a.author}</p>
                           </div>
                         ))
                       ) : (
