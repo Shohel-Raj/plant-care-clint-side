@@ -47,7 +47,7 @@ const DashboardHome = () => {
     // Simulate fetching from backend
     const fetchStats = async () => {
       setIsDataAvail(true)
-      fetch('http://localhost:3000/stats')
+      fetch('https://update-plant-care.vercel.app/stats')
         .then(res => res.json())
         .then(data => {
           setStats(data)
@@ -58,16 +58,16 @@ const DashboardHome = () => {
           toast.error('Failed to load stats:', err)
         });
     };
-    fetch(`http://localhost:3000/stats?email=${user.email}`)
+    fetch(`https://update-plant-care.vercel.app/stats?email=${user.email}`)
       .then((res) => res.json())
       .then((data) => setMyStats(data))
       .catch((err) => console.error('Failed to load user stats', err));
 
-    fetch('http://localhost:3000/category-count')
+    fetch('https://update-plant-care.vercel.app/category-count')
       .then((res) => res.json())
       .then((data) => setCategoryData(data));
 
-     fetch('http://localhost:3000/blog-category-count')
+     fetch('https://update-plant-care.vercel.app/blog-category-count')
       .then(res => res.json())
       .then(data => setBlogData(data));
 

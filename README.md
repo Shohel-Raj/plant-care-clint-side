@@ -37,6 +37,7 @@ A modern Plant Care Tracker app built with **React 19**, styled with **Tailwind 
 
 🌐 [Visit Plant Care Live](https://plant-care-tracker-4cf37.web.app/)
 
+
 ---
 
 ## 📦 Dependencies

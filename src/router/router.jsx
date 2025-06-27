@@ -31,7 +31,7 @@ const router = createBrowserRouter([
       {
         index: true,
         Component: Home,
-        loader: () => fetch('http://localhost:3000/latestPlant'),
+        loader: () => fetch('https://update-plant-care.vercel.app/latestPlant'),
         hydrateFallbackElement: <Loader />
       },
       {
@@ -49,25 +49,25 @@ const router = createBrowserRouter([
       {
         path: 'blog',
         Component: MyBlog,
-        loader: () => fetch('http://localhost:3000/blogs'),
+        loader: () => fetch('https://update-plant-care.vercel.app/blogs'),
         hydrateFallbackElement: <Loader />
       },
       {
         path: 'viewBlogDetails/:id',
         Component: BlogDetails,
-        loader: ({ params }) => fetch(`http://localhost:3000/blog/${params.id}`),
+        loader: ({ params }) => fetch(`https://update-plant-care.vercel.app/blog/${params.id}`),
         hydrateFallbackElement: <Loader />
       },
       {
         path: 'viewdetails/:id',
         element: <PrivateRoute><ViewDetails /></PrivateRoute>,
-        loader: ({ params }) => fetch(`http://localhost:3000/plant/${params.id}`),
+        loader: ({ params }) => fetch(`https://update-plant-care.vercel.app/plant/${params.id}`),
         hydrateFallbackElement: <Loader />
       },
       {
         path: 'AllPlant',
         element:<AllPlants />,
-        loader: () => fetch('http://localhost:3000/allPlant'),
+        loader: () => fetch('https://update-plant-care.vercel.app/allPlant'),
         hydrateFallbackElement: <Loader />
       },
       {
@@ -95,13 +95,13 @@ const router = createBrowserRouter([
       {
         path: 'viewUpdate/:id',
         element: <PrivateRoute><UpdatePlant /></PrivateRoute>,
-        loader: ({ params }) => fetch(`http://localhost:3000/plant/${params.id}`),
+        loader: ({ params }) => fetch(`https://update-plant-care.vercel.app/plant/${params.id}`),
         hydrateFallbackElement: <Loader />
       },
       {
         path: 'AllPlant',
         element: <PrivateRoute><AllPlantsDashboard /></PrivateRoute>,
-        loader: () => fetch('http://localhost:3000/allPlant'),
+        loader: () => fetch('https://update-plant-care.vercel.app/allPlant'),
         hydrateFallbackElement: <Loader />
       },
       {
@@ -115,7 +115,7 @@ const router = createBrowserRouter([
       {
         path: 'viewdetails/:id',
         element: <PrivateRoute><PlantDetails /></PrivateRoute>,
-        loader: ({ params }) => fetch(`http://localhost:3000/plant/${params.id}`),
+        loader: ({ params }) => fetch(`https://update-plant-care.vercel.app/plant/${params.id}`),
         hydrateFallbackElement: <Loader />
       },
     ]

@@ -14,7 +14,7 @@ const QuestionForm = ({ onNewQuestion }) => {
       createdAt: new Date(),
     };
 
-    const res = await fetch('http://localhost:3000/questions', {
+    const res = await fetch('https://update-plant-care.vercel.app/questions', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(newQ)

@@ -28,10 +28,10 @@ const AllPlantsDashboard = () => {
         let url = ``
 
         if (filter === 'Easy to Diffecult') {
-            url = 'http://localhost:3000/allPlant'
+            url = 'https://update-plant-care.vercel.app/allPlant'
 
         } else (
-            url = 'http://localhost:3000/allPlant?order=desc'
+            url = 'https://update-plant-care.vercel.app/allPlant?order=desc'
         )
 
         fetch(url).then(res => res.json()).then(data => {

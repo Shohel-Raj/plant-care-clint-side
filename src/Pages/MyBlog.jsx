@@ -10,7 +10,7 @@ const BlogPage = () => {
     document.title = 'Plant Care | Blogs';
 
     // fetch from API
-    fetch('http://localhost:3000/blogs')
+    fetch('https://update-plant-care.vercel.app/blogs')
       .then(res => res.json())
       .then(data => setBlogs(data))
       .catch(err => console.error(err));

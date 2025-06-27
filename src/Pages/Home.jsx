@@ -18,7 +18,7 @@ const Home = () => {
         document.title = 'Plant Care | Home';
         Aos.init({ duration: 1000 });
 
-        fetch('http://localhost:3000/blogsHome')
+        fetch('https://update-plant-care.vercel.app/blogsHome')
       .then(res => res.json())
       .then(data => setBlogs(data))
       .catch(err => console.error(err));

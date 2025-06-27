@@ -15,7 +15,7 @@ const QuestionList = () => {
   // Fetch questions
   const fetchQuestions = async () => {
     try {
-      const res = await fetch('http://localhost:3000/questions');
+      const res = await fetch('https://update-plant-care.vercel.app/questions');
       const data = await res.json();
       setQuestions(data);
     } catch (error) {
@@ -52,7 +52,7 @@ const QuestionList = () => {
     };
 
     try {
-      const res = await fetch(`http://localhost:3000/questions/${selectedQuestion._id}/answer`, {
+      const res = await fetch(`https://update-plant-care.vercel.app/questions/${selectedQuestion._id}/answer`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(answer)
