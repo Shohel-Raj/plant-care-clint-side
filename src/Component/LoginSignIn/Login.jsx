@@ -67,7 +67,7 @@ const Login = () => {
                         </label>
 
                         <button className="btn btn-neutral mt-4">Login</button>
-                        <p className="px-6 text-sm text-center ">Don't have an account yet? <Link to='/signIn' className='underline hover:text-white hover:bg-blue-600 hover:rounded-sm'>Sign In</Link> </p>
+                        <p className="px-6 text-sm text-center ">Don't have an account yet? <Link to='/loginSignInPage/signIn' className='underline hover:text-white hover:bg-blue-600 hover:rounded-sm'>Sign In</Link> </p>
 
                         
                     </form>

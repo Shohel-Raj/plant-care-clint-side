@@ -21,6 +21,7 @@ import DashboardLayout from "../DashboardLayout/DashboardLayout";
 import DashboardHome from "../Pages/DashboardHome";
 import AllPlantsDashboard from "../Pages/AllPlantsDashboard";
 import PlantDetails from "../Pages/PlantDetails";
+import Login from "../Component/LoginSignIn/Login";
 
 const router = createBrowserRouter([
   {
@@ -70,16 +71,32 @@ const router = createBrowserRouter([
         loader: () => fetch('https://update-plant-care.vercel.app/allPlant'),
         hydrateFallbackElement: <Loader />
       },
+      // {
+      //   path: 'loginSignInPage',
+      //   Component: LoginSignIn
+      // },
+      // {
+      //   path: 'signIn',
+      //   Component: SignIn
+      // },
+      
+    ]
+  },
+  {
+    path:'loginSignInPage',
+    Component: LoginSignIn,
+    children:[
       {
-        path: 'loginSignInPage',
-        Component: LoginSignIn
+        index:true,
+        Component:Login
       },
-      {
+        {
         path: 'signIn',
         Component: SignIn
       },
-      
+
     ]
+
   },
 
   {

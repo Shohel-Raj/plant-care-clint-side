@@ -50,7 +50,7 @@ const Navbar = () => {
 
     return (
         <>
-            <div className="navbar bg-base-100 dark:bg-white w-11/12 md:w-10/12 mx-auto pl-0" >
+            <div className="navbar bg-base-100  w-11/12 md:w-10/12 mx-auto pl-0" >
                 <div className="navbar-start">
                     <div onClick={handleBTN} className="flex items-center p-0 cursor-pointer">
                         <img className="w-10" src={img} alt="Logo" />

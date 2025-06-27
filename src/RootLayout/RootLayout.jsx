@@ -8,7 +8,7 @@ import Lower from '../Component/Footer/Lower';
 const RootLayout = () => {
     return (
         <div >
-            <div className=' shadow border-b border-[#97f7b9] sticky top-0 z-30'>
+            <div className=' shadow border-b bg-base-100 border-[#97f7b9] sticky top-0  z-30'>
                 <Navbar></Navbar>
                 {/* <labez */}
             </div>
