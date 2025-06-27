@@ -10,6 +10,7 @@ import {
   Bug,
 } from 'lucide-react';
 import { Outlet } from 'react-router';
+import Navbar from '../Component/Navbar/Navbar';
 
 const AnimatedIcon = ({ children, style, size = 40 }) => (
   <div
@@ -26,7 +27,9 @@ const LoginSignIn = () => {
   }, []);
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-green-100 via-green-200 to-green-300 flex items-center justify-center px-4">
+    <>
+      <Navbar></Navbar>
+    <div className="relative min-h-[calc(100vh-66px)] py-1.5 overflow-hidden bg-gradient-to-br from-green-100 via-green-200 to-green-300 flex items-center justify-center px-4">
       {/* 🌿 Animated Background Icons */}
       <AnimatedIcon style={{ top: '8%', left: '5%' }}>
         <Leaf className="text-green-600" />
@@ -49,14 +52,15 @@ const LoginSignIn = () => {
       <AnimatedIcon style={{ top: '30%', left: '45%' }} size={35}>
         <Bug className="text-orange-500" />
       </AnimatedIcon>
-
+  
       {/* 🔐 Login Card */}
-      <div className="z-10 bg-white bg-opacity-95 shadow-2xl rounded-2xl max-w-md w-full p-8 backdrop-blur">
-        <h1 className="text-3xl font-bold text-green-700 mb-6 text-center">Welcome to PlantsCare</h1>
+      {/* <div className="z-10 bg-white bg-opacity-95 shadow-2xl rounded-2xl max-w-md w-full p-8 backdrop-blur">
+        <h1 className="text-3xl font-bold text-green-700 mb-6 text-center">Welcome to PlantsCare</h1> */}
         {/* <Login /> */}
         <Outlet></Outlet>
-      </div>
+      {/* </div> */}
     </div>
+    </>
   );
 };
 
