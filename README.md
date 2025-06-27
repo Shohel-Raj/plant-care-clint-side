@@ -1,79 +1,95 @@
-# 🌟 Plant Care (React UI Project)
+# 🌿 Plant Care (React UI Project)
 
-This is a modern (Plant Care) React project built with Tailwind CSS and enhanced by a variety of UI libraries and tools. It includes features such as dark/light mode toggling, animations, alerts, tooltips, and more and manage data using MOngoDB (Atlas). Designed for clean aesthetics and interactive user experiences.
+A modern Plant Care Tracker app built with **React 19**, styled with **Tailwind CSS + DaisyUI**, and powered by **Firebase**, **MongoDB Atlas**, and rich animations/UI libraries. Includes a feature-rich **Dashboard** to visualize, add, and manage plants with charts and interactivity.
+
+---
 
 ## 🚀 Features
 
-- ⚛️ Built with **React 19**
-- 🎨 Styled using **Tailwind CSS** with **DaisyUI**
-- 🌙 **Dark/Light mode toggle**
-- 🔥 Authintication & User Management with **Firebase**
-- 🎞️ Smooth animations with **Lottie React**
-- 🎞️ Scroll animations with **AOS Animation**
-- 🍞 Toast notifications via **React Toastify**
-- 💡 Tooltips using **React Tooltip**
-- 🧪 DataBase Management using **MongoDB Atlas**
-- 🧭 Routing handled by **React Router v7**
-- 😍 Icons from **React Icons**
-- 🧼 Elegant modals/alerts via **SweetAlert2**
-- 🌀 SwiperJS for sliders and carousels
+- ⚛️ **React 19** with component-based UI
+- 🎨 **Tailwind CSS** with **DaisyUI** for clean, responsive design
+- 🔥 **Firebase Authentication** & user management
+- 📊 **Dashboard** with **Recharts** for visual insights
+- 🧾 **Lucide React** & **Heroicons** for modern iconography
+- 🎞️ **Lottie React** for animated illustrations
+- 🌀 **SwiperJS** for carousels/sliders
+- ✨ **AOS** (Animate on Scroll) for smooth scroll animations
+- 🍞 **React Toastify** for toast notifications
+- 💬 **React Tooltip** for hover tooltips
+- 😍 **SweetAlert2** for modals/alerts
+- 🧭 Routing with **React Router v7**
+- 🔐 Protected Routes for authenticated users
+- ☁️ Data stored securely in **MongoDB Atlas**
 
+---
 
-## Live Demo
+## 📊 Dashboard Features
 
-Check out the live version of the project [Plant Care](https://plant-care-tracker-4cf37.web.app/).
+- ✅ View plant growth trends using **Recharts**
+- ✅ Add new plants with relevant details
+- ✅ Manage, update, or delete your own added plants
+- ✅ See user stats and activity
+- ✅ Fully responsive and optimized for all devices
 
+---
+
+## 🔗 Live Demo
+
+🌐 [Visit Plant Care Live](https://plant-care-tracker-4cf37.web.app/)
+
+---
 
 ## 📦 Dependencies
 
-| Package             | Version    | Description |
-|---------------------|------------|-------------|
-| `react`             | ^19.0.0    | Core React library |
-| `react-dom`         | ^19.0.0    | React DOM rendering |
-| `react-router`      | ^7.5.3     | Declarative routing |
-| `tailwindcss`       | ^4.1.5     | Utility-first CSS framework |
-| `@tailwindcss/vite` | ^4.1.5     | Tailwind integration with Vite |
-| `daisyui`           | ^5.0.35    | Tailwind component library |
-| `firebase`          | ^11.6.1    | Firebase services |
-| `lottie-react`      | ^2.4.1     | Render Lottie animations in React |
-| `react-icons`       | ^5.5.0     | Icon library wrapper |
-| `react-toastify`    | ^11.0.5    | Toast notification system |
-| `react-tooltip`     | ^5.28.1    | Simple tooltips |
-| `sweetalert2`       | ^11.21.2   | Stylish alerts and modals |
-| `swiper`            | ^11.2.6    | Mobile touch slider |
-| `AOS`            | ^2.3.4    | Scroll Animation |
+| Package               | Version    | Description |
+|------------------------|------------|-------------|
+| `react`               | ^19.0.0    | Core React library |
+| `react-dom`           | ^19.0.0    | React DOM renderer |
+| `react-router`        | ^7.5.3     | Client-side routing |
+| `tailwindcss`         | ^4.1.5     | Utility-first CSS |
+| `@tailwindcss/vite`   | ^4.1.5     | Tailwind integration for Vite |
+| `daisyui`             | ^5.0.35    | UI components for Tailwind |
+| `firebase`            | ^11.6.1    | Backend services and auth |
+| `lottie-react`        | ^2.4.1     | Animation rendering |
+| `react-icons`         | ^5.5.0     | Icon library |
+| `lucide-react`        | ^0.523.0   | Modern icon set |
+| `@heroicons/react`    | ^2.2.0     | Official Tailwind icons |
+| `react-toastify`      | ^11.0.5    | Toast notifications |
+| `react-tooltip`       | ^5.28.1    | Tooltip handling |
+| `sweetalert2`         | ^11.21.2   | Custom alert modals |
+| `swiper`              | ^11.2.6    | Mobile sliders/carousels |
+| `aos`                 | ^2.3.4     | Scroll animation library |
+| `recharts`            | ^3.0.2     | Charting library for React |
 
-## 💡 Dark/Light Mode
+---
 
-This project supports dynamic theme switching using **DaisyUI**. Users can toggle between dark and light themes easily.
+## ⚙️ Environment Variables
 
+To run the project locally, create a `.env` file and include the following:
 
+```env
+VITE_apiKey=your_api_key
+VITE_authDomain=your_project.firebaseapp.com
+VITE_projectId=your_project_id
+VITE_storageBucket=your_project.appspot.com
+VITE_messagingSenderId=your_sender_id
+VITE_appId=your_app_id
+```
 
- 
+---
 
-## Environment Variables
+## 🧑‍💻 Tech Stack
 
-To run this project, you will need to add the following environment variables to your .env file
+**Frontend:** React, Tailwind CSS, DaisyUI  
+**Backend:** Node.js, Express  
+**Database:** MongoDB (Atlas)  
+**Auth:** Firebase Authentication  
 
-`VITE_authDomain`
+---
 
-`VITE_projectId`
+## 🙌 Contribution
 
-`VITE_projectId`
+Feel free to fork the repo, raise issues or contribute with PRs.
 
-`VITE_apiKey`
-
-`VITE_storageBucket`
-
-`VITE_messagingSenderId`
-
-`VITE_appId`
-
-## Tech Stack
-
-**Client:** React, TailwindCSS
-
-**Server:** Node, Express
-
-**Databese:** MongoDB (MongoDB Atlas)
+---
 
