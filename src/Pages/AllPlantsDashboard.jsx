@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useLoaderData, useNavigate } from 'react-router';
 import { AuthContext } from '../Contexts/AuthContext';
 
-const AllPlants = () => {
+const AllPlantsDashboard = () => {
     const data = useLoaderData()
 
     const [dataa, setData] = useState(data);
@@ -19,7 +19,7 @@ const AllPlants = () => {
 
     const handleViewDetaills = (id) => {
 
-        navigate(`/viewdetails/${id}`)
+        navigate(`/dashboard/viewdetails/${id}`)
     }
 
     useEffect(() => {
@@ -43,7 +43,7 @@ const AllPlants = () => {
 
     return (
         <>
-            <div className="w-11/12 md:w-10/12 min-h-[calc(100vh-150px)]  mx-auto">
+            <div className="w-11/12 min-h-[calc(100vh-150px)]  mx-auto">
 
                 <div>
                     {
@@ -83,9 +83,7 @@ const AllPlants = () => {
                                     {/* row 1 */}
                                     {
                                         dataa.map((singledata, index) =>
-                                            <tr
-                                                data-aos="fade-up"
-                                                data-aos-duration="1000" key={singledata._id}>
+                                            <tr  key={singledata._id}>
                                                 <th>
                                                     <p>{index + 1}</p>
                                                 </th>
@@ -136,4 +134,4 @@ const AllPlants = () => {
     );
 };
 
-export default AllPlants;
+export default AllPlantsDashboard;

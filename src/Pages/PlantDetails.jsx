@@ -1,7 +1,9 @@
-import React from 'react';
-import { Link, useNavigate } from 'react-router';
+import React, { useEffect } from 'react';
+import { Link, useLoaderData, useNavigate } from 'react-router';
+import ViewCard from '../Component/DetaillsCard/ViewCard';
 
-const ViewCard = ({ data }) => {
+const PlantDetails = () => {
+    const data = useLoaderData()
     const navigate = useNavigate();
     const {
         _id,
@@ -17,10 +19,14 @@ const ViewCard = ({ data }) => {
         category,
         careLevel
     } = data;
+    useEffect(()=>{
+                document.title=`Plant Care | Details`
+            },[])
 
     return (
-        <div className="bg-base-100 min-h-screen pb-10">
-            <div className="w-11/12 md:w-8/12 mx-auto mt-10">
+        <>
+           <div className="bg-base-100 min-h-screen pb-10">
+            <div className="w-11/12 mx-auto mt-10">
                 <img
                     src={image}
                     alt={plantName}
@@ -49,17 +55,18 @@ const ViewCard = ({ data }) => {
                         <p>Email: <span className="italic">{userEmail}</span></p>
                     </div>
                 </div>
-
-            </div>
-            <Link
+<Link
                 onClick={() => navigate(-1)}
-                className="inline-block text-sm bg-green-600 text-white px-4 py-2 rounded-full hover:bg-green-700 transition"
+                className="inline-block text-sm bg-green-600 text-white px-4 mt-3 py-2 rounded-full hover:bg-green-700 transition"
             >
                 ← Back
             </Link>
+            </div>
+            
 
         </div>
+        </>
     );
 };
 
-export default ViewCard;
+export default PlantDetails;

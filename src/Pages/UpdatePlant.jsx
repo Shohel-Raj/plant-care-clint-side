@@ -45,7 +45,7 @@ const UpdatePlant = () => {
 
     return (
         <>
-            <div className='w-11/12 md:w-10/12 mx-auto md:mt-5'>
+            <div className='w-11/12  mx-auto md:mt-5'>
 
                 <div className='space-y-3.5'>
                     <h1 className='font-bold text-2xl'>Glow Up Time!</h1>

@@ -66,17 +66,17 @@ const MyPlants = () => {
 
     const handleViewDetaills = (id) => {
 
-        navigate(`/viewdetails/${id}`)
+        navigate(`/dashboard/viewdetails/${id}`)
     }
     const handleUpdate =(id)=>{
-        navigate(`/viewUpdate/${id}`)
+        navigate(`/dashboard/viewUpdate/${id}`)
     }
 
 
 
     return (
         <>
-            <div className="w-11/12 min-h-[calc(100vh-150px)] md:w-10/12 mx-auto">
+            <div className="w-11/12 min-h-[calc(100vh-150px)] mx-auto">
 
                 <div>
                     {
@@ -101,8 +101,7 @@ const MyPlants = () => {
                                     {/* row 1 */}
                                     {
                                         dataa.map((singledata, index) =>
-                                            <tr data-aos="fade-up"
-                                data-aos-duration="2000" key={singledata._id}>
+                                            <tr  key={singledata._id}>
                                                 <th>
                                                     <p>{index + 1}</p>
                                                 </th>

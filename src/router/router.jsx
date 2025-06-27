@@ -17,91 +17,111 @@ import BlogDetails from "../Component/DetaillsCard/BlogDetails";
 import AboutUs from "../Pages/About";
 import Contact from "../Pages/Contact";
 import QAPage from "../Pages/QAPage";
+import DashboardLayout from "../DashboardLayout/DashboardLayout";
+import DashboardHome from "../Pages/DashboardHome";
+import AllPlantsDashboard from "../Pages/AllPlantsDashboard";
+import PlantDetails from "../Pages/PlantDetails";
 
 const router = createBrowserRouter([
   {
     path: "/",
     Component: RootLayout,
-    errorElement: <Error></Error>,
+    errorElement: <Error />,
     children: [
       {
         index: true,
         Component: Home,
         loader: () => fetch('http://localhost:3000/latestPlant'),
-        hydrateFallbackElement: <Loader></Loader>
+        hydrateFallbackElement: <Loader />
       },
       {
-        path:'/about',
-        Component:AboutUs
+        path: 'about',
+        Component: AboutUs
       },
       {
-        path:'/contact',
-        Component:Contact
+        path: 'contact',
+        Component: Contact
       },
       {
-        path:'/q&a',
-        Component:QAPage
+        path: 'q&a',
+        Component: QAPage
       },
       {
-        path: "/blog",
+        path: 'blog',
         Component: MyBlog,
         loader: () => fetch('http://localhost:3000/blogs'),
-        hydrateFallbackElement: <Loader></Loader>
+        hydrateFallbackElement: <Loader />
       },
       {
-        path: "/viewBlogDetails/:id",
-        Component:BlogDetails,
+        path: 'viewBlogDetails/:id',
+        Component: BlogDetails,
         loader: ({ params }) => fetch(`http://localhost:3000/blog/${params.id}`),
-        hydrateFallbackElement: <Loader></Loader>
+        hydrateFallbackElement: <Loader />
       },
       {
-        path: "/AllPlant",
-        element: <PrivateRoute>
-          <AllPlants></AllPlants>
-        </PrivateRoute>,
+        path: 'viewdetails/:id',
+        element: <PrivateRoute><ViewDetails /></PrivateRoute>,
+        loader: ({ params }) => fetch(`http://localhost:3000/plant/${params.id}`),
+        hydrateFallbackElement: <Loader />
+      },
+      {
+        path: 'AllPlant',
+        element:<AllPlants />,
         loader: () => fetch('http://localhost:3000/allPlant'),
-        hydrateFallbackElement: <Loader></Loader>
+        hydrateFallbackElement: <Loader />
       },
       {
-        path: "/viewdetails/:id",
-        element: <PrivateRoute>
-          <ViewDetails></ViewDetails>
-        </PrivateRoute>,
-        loader: ({ params }) => fetch(`http://localhost:3000/plant/${params.id}`),
-        hydrateFallbackElement: <Loader></Loader>
-      },
-      {
-        path: "/viewUpdate/:id",
-        element: <PrivateRoute>
-          <UpdatePlant></UpdatePlant>
-        </PrivateRoute>,
-        loader: ({ params }) => fetch(`http://localhost:3000/plant/${params.id}`),
-        hydrateFallbackElement: <Loader></Loader>
-      },
-      {
-        path: "/loginSignInPage",
+        path: 'loginSignInPage',
         Component: LoginSignIn
       },
       {
-        path: "/signIn",
+        path: 'signIn',
         Component: SignIn
       },
-      {
-        path: "/addPlant",
-        element: <PrivateRoute>
-          <AddPlants></AddPlants>
-        </PrivateRoute>
-      },
-      {
-        path: "/myPlant",
-        element: <PrivateRoute>
-          <MyPlants></MyPlants>
-        </PrivateRoute>
-      }
+      
     ]
   },
 
+  {
+    path: 'dashboard',
+    element: <PrivateRoute><DashboardLayout/></PrivateRoute>,
+    children: [
+      {
+        index:true,
+        Component:DashboardHome
+      },
+      
+      
+      {
+        path: 'viewUpdate/:id',
+        element: <PrivateRoute><UpdatePlant /></PrivateRoute>,
+        loader: ({ params }) => fetch(`http://localhost:3000/plant/${params.id}`),
+        hydrateFallbackElement: <Loader />
+      },
+      {
+        path: 'AllPlant',
+        element: <PrivateRoute><AllPlantsDashboard /></PrivateRoute>,
+        loader: () => fetch('http://localhost:3000/allPlant'),
+        hydrateFallbackElement: <Loader />
+      },
+      {
+        path: 'addPlant',
+        element: <PrivateRoute><AddPlants /></PrivateRoute>
+      },
+      {
+        path: 'myPlant',
+        element: <PrivateRoute><MyPlants /></PrivateRoute>
+      },
+      {
+        path: 'viewdetails/:id',
+        element: <PrivateRoute><PlantDetails /></PrivateRoute>,
+        loader: ({ params }) => fetch(`http://localhost:3000/plant/${params.id}`),
+        hydrateFallbackElement: <Loader />
+      },
+    ]
+  }
 ]);
+
 
 
 export default router;
